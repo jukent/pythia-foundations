@@ -28,9 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -38,22 +37,25 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Advanced GitHub Setup" href="github-setup-advanced.html" />
+    <link rel="next" title="Configuring Your GitHub Account" href="github-setup-advanced.html" />
     <link rel="prev" title="Issues and Discussions" href="github-issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,7 +118,14 @@
     
     
     
-    <a class="nav-link nav-internal" href="https://projectpythia.org/gallery.html">Gallery</a>
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
   </li>
   
   <li class="nav-item">
@@ -146,6 +155,12 @@
           <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
             <span><i class="fab fa-twitter-square"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
           </a>
         </li>
       </ul>
@@ -202,7 +217,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../getting-started-python.html">
-   Getting started with Python
+   Getting Started with Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -212,7 +227,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../quickstart.html">
-     Quickstart: zero to Python
+     Quickstart: Zero to Python
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -261,14 +276,14 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../markdown.html">
-     Formatted text in the notebook with Markdown
+     Formatted Text in the Notebook with Markdown
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../getting-started-github.html">
-   Getting started with GitHub
+   Getting Started with GitHub
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -283,7 +298,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-repos.html">
-     GitHub repositories
+     GitHub Repositories
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,12 +313,15 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-setup-advanced.html">
-     Advanced GitHub Setup
+     Configuring Your GitHub Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basic-git.html">
-     Basic version control with git
+     Basic Version Control with
+     <em>
+      git
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -317,13 +335,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="contribute-to-pythia.html">
-     Contribute to Project Pythia via GitHub
+    <a class="reference internal" href="review-pr.html">
+     Reviewing Pull Requests
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="github-advanced.html">
-     Advanced GitHub Topics
+    <a class="reference internal" href="github-workflows.html">
+     GitHub Workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="contribute-to-pythia.html">
+     Contribute to Project Pythia via GitHub
     </a>
    </li>
   </ul>
@@ -378,8 +401,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/matplotlib/matplotlib.html">
+    <a class="reference internal" href="../../core/matplotlib/matplotlib-basics.html">
      Matplotlib Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/histograms-piecharts-animation.html">
+     Histograms, Pie Charts, and Animations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/annotations-colorbars-layouts.html">
+     Annotations, Colorbars, and Advanced Layouts
     </a>
    </li>
   </ul>
@@ -413,7 +446,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../core/datetime/datetime.html">
-     Times and dates in Python
+     Times and Dates in Python
     </a>
    </li>
   </ul>
@@ -463,7 +496,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/xarray/xarray.html">
+    <a class="reference internal" href="../../core/xarray/xarray-intro.html">
      Introduction to Xarray
     </a>
    </li>
@@ -477,6 +510,11 @@
      Calculating ENSO with Xarray
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/xarray/dask-arrays-xarray.html">
+     Dask Arrays with Xarray
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -488,7 +526,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/how-to-contribute.html">
-   Pythia Foundations contributor’s guide
+   Pythia Foundations Contributor’s Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -602,6 +640,11 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cloning-and-forking">
+   Cloning and forking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cloning-a-repository">
    Cloning a repository
   </a>
@@ -644,11 +687,13 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cloning-and-forking-a-repository">
+  <a class="reference internal image-reference" href="../../_images/GitHub-logo.png"><img alt="GitHub Logo" src="../../_images/GitHub-logo.png" style="width: 400px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="cloning-and-forking-a-repository">
 <h1>Cloning and Forking a Repository<a class="headerlink" href="#cloning-and-forking-a-repository" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="section" id="overview">
 <h2>Overview:<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ol class="simple">
+<li><p>Cloning and forking a git repository</p></li>
 <li><p>Cloning a repository</p></li>
 <li><p>Forking a repository</p></li>
 </ol>
@@ -663,9 +708,17 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Prior GitHub Sections</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="what-is-github.html"><span class="doc std std-doc">What is GitHub?</span></a></p></td>
 <td><p>Necessary</p></td>
 <td><p>GitHub user account required</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="github-repos.html"><span class="doc std std-doc">GitHub Repositories</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="github-issues.html"><span class="doc std std-doc">Issues and Discussions</span></a></p></td>
+<td><p>Recommended</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Command-line shell</p></td>
 <td><p>Helpful</p></td>
@@ -678,13 +731,39 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </ul>
 </div>
 <hr class="docutils" />
+<div class="section" id="cloning-and-forking">
+<h2>Cloning and forking<a class="headerlink" href="#cloning-and-forking" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p><em>Cloning</em> and <em>forking</em> are two related terms in the GitHub vernacular
+that, unfortunately, are not always used consistently throughout
+the <em>web-o-sphere</em>. In Project Pythia we use the term <em>clone</em> to mean
+making a <strong>local</strong> copy of a <strong>remote</strong> repository; the source for
+the copy is a remote repo, and the destination for the copy is your
+local laptop/desktop. When working with GitHub, a <em>fork</em>, on the
+other hand, creates a copy of a GitHub repository on GitHub. I.e.
+both the source and the destination of the <em>fork</em> operations are
+hosted in the cloud on GitHub. Forking is performed via your GitHub
+account. While the forked repository may be owned by anyone, the
+newly created repository will be owned by you. Cloning, on the
+other hand, is performed using a Git command. Naturally, since the
+destination of the clone operation is your local computer, you will
+own the cloned contents. In either case, whether you clone or fork,
+any changes you make to the newly created repository will not impact
+the original without taking explicit action (e.g. performing a
+<em>push</em> or submitting a <em>Pull Request</em>, the topics of later sections
+in this guide).</p>
+<p>Cloning and forking are often used together (more on this later).
+The illustration below demonstrates the operation of a Fork of a
+remote repository (UPSTREAM), followed by a clone of the newly
+created ORIGIN.</p>
+<p><img alt="clone-and-fork" src="../../_images/github-clone-fork.png" /></p>
+</div>
 <div class="section" id="cloning-a-repository">
 <h2>Cloning a repository<a class="headerlink" href="#cloning-a-repository" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Cloning is ideal for the following scenarios:</p>
 <ol class="simple">
 <li><p>You wish to download, build, and install the latest version of a software package.</p></li>
 <li><p>You would like to experiment with a repository on your local computer, but do not desire to maintain a separate copy of it (termed a <em>fork</em>, to be covered later in this lesson) on your GitHub account.</p></li>
-<li><p>You have previously <em>forked</em> a repository to your own GitHub account, and now wish to make changes to it for possible incorporation into the original repo, via a <em>pull request</em>.</p></li>
+<li><p>You have previously <em>forked</em> a repository to your own GitHub account, and now wish to make changes to it for possible incorporation into the original repo, via a <em>Pull Request</em>.</p></li>
 </ol>
 <p>Let’s consider the 2nd scenario. Say you wish to copy a GitHub repository to a computer you have access to (which could be your own computer, or one you have access to at work or school).</p>
 <p>We’ll use a very basic repo that is part of the <a class="reference external" href="https://github.com/ProjectPythia">Project Pythia organization</a> as our example.</p>
@@ -697,7 +776,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <p>Click on the green <strong>Code</strong> button to the right:</p>
 <img alt="CodeClone" src="../../_images/GitHub_CodeClone.png" />
 <hr class="docutils" />
-<p>Select the <strong>HTTPS</strong> option, then click on the URL to highlight it, and finally click on the copy-to-clipboard icon:</p>
+<p>Select the <strong>HTTPS</strong> option, and click on the copy-to-clipboard icon:</p>
 <img alt="CodeCloneHTTPS" src="../../_images/GitHub_CodeCloneHTTPS.png" />
 <hr class="docutils" />
 <div class="admonition tip">
@@ -781,13 +860,13 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 <p>You now have a copy (essentially a clone) of the forked repository, which is now owned by you.</p>
 <p>You could, at this point, select one of the files in the repository and use GitHub’s built-in editor to make changes to these text-based files. But the typical use case that leverages the collaborative power of GitHub and its command-line cousin, <em>git</em>, involves <em>cloning</em> your <em>forked</em> copy of the repo to your local computer, where you can then perform your edits, and (in the case of software) test them on your system.</p>
-<p>Cloning your fork is the same as cloning the original repo. Click on the Code button, select the HTTPS protocol, copy the URL to the clipboard, and then run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;URL&gt;</span></code> on your local computer.</p>
+<p>Cloning your fork is the same as cloning the original repo. Click on the Code button, select the HTTPS protocol, copy the URL to the clipboard, and then run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;URL&gt;</span></code> on your local computer. In this case, you will need to either run this command in a different directory or rename the destination directory with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;URL&gt;</span> <span class="pre">&lt;directory-name&gt;</span></code>, since it will by default use the name of the repo, <code class="docutils literal notranslate"><span class="pre">github-sandbox</span></code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Unlike cloning, forking is not an option supported by the <em>git</em> command-line interface. I.e., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fork</span></code> is not a valid command.</p>
 </div>
 <p>Once you’ve cloned the fork to your local machine, try running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> again. You will see that the <em>origin</em> URL now points to your GitHub account or organization.</p>
-<p><em>The main purpose of cloning and forking a remote repository is so that you can make changes to the contents of those repositories in a safe and version-controller manner.</em> The process of making changes and submitting them as <em>pull requests</em> to the original repository is covered in our lesson on <a class="reference internal" href="github-pull-request.html"><span class="doc std std-doc">Opening a Pull Request on GitHub</span></a>, but the workflow is as follows:</p>
+<p><em>The main purpose of cloning and forking a remote repository is so that you can make changes to the contents of those repositories in a safe and version-controller manner.</em> The process of making changes and submitting them as <em>Pull Requests</em> to the original repository is covered in our lesson on <a class="reference internal" href="github-pull-request.html"><span class="doc std std-doc">Opening a Pull Request on GitHub</span></a>, but the workflow is as follows:</p>
 <ol class="simple">
 <li><p>Edit an existing file or files, and/or create new files.</p></li>
 <li><p>Stage your changes by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p></li>
@@ -801,9 +880,9 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
-<li><p>The process of making a copy of a GitHub repository is called <em>cloning</em>.</p></li>
-<li><p><em>Forking</em> a repository also makes a copy of a GitHub repo, but places it in your GitHub organization.</p></li>
-<li><p>Forking allows you to modify a repo, without affecting the original version.</p></li>
+<li><p>The process of making a <strong>local</strong> copy of a GitHub repository is called <em>cloning</em>. The destination for the cloned copy is whatever machine you ran the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command from.</p></li>
+<li><p><em>Forking</em> a repository also makes a copy of a GitHub repo, but places it in your GitHub organization in the GitHub.com cloud.</p></li>
+<li><p>Forking allows you to modify a remote repo, without affecting the original version.</p></li>
 <li><p>After cloning your fork to your local computer, you can meke changes to your copy, which you can then submit to the original repo as a <a class="reference internal" href="github-pull-request.html"><span class="doc std std-doc"><em>Pull request</em></span></a>.</p></li>
 </ul>
 </div>
@@ -839,7 +918,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./foundations/github"
         },
         predefinedOutput: true
@@ -860,7 +939,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
     <a class='right-next' id="next-link" href="github-setup-advanced.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced GitHub Setup</p>
+        <p class="prev-next-title">Configuring Your GitHub Account</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -986,7 +1065,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 16 February 2022.
+          Last updated on 27 February 2023.
         </p>
       </div>
     </div>

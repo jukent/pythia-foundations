@@ -28,9 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -38,25 +37,28 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="GitHub repositories" href="github-repos.html" />
-    <link rel="prev" title="Getting started with GitHub" href="../getting-started-github.html" />
+    <link rel="next" title="GitHub Repositories" href="github-repos.html" />
+    <link rel="prev" title="Getting Started with GitHub" href="../getting-started-github.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +120,14 @@
     
     
     
-    <a class="nav-link nav-internal" href="https://projectpythia.org/gallery.html">Gallery</a>
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
   </li>
   
   <li class="nav-item">
@@ -148,6 +157,12 @@
           <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
             <span><i class="fab fa-twitter-square"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
           </a>
         </li>
       </ul>
@@ -204,7 +219,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../getting-started-python.html">
-   Getting started with Python
+   Getting Started with Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -214,7 +229,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../quickstart.html">
-     Quickstart: zero to Python
+     Quickstart: Zero to Python
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -263,14 +278,14 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../markdown.html">
-     Formatted text in the notebook with Markdown
+     Formatted Text in the Notebook with Markdown
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../getting-started-github.html">
-   Getting started with GitHub
+   Getting Started with GitHub
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -285,7 +300,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-repos.html">
-     GitHub repositories
+     GitHub Repositories
     </a>
    </li>
    <li class="toctree-l2">
@@ -300,12 +315,15 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-setup-advanced.html">
-     Advanced GitHub Setup
+     Configuring Your GitHub Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basic-git.html">
-     Basic version control with git
+     Basic Version Control with
+     <em>
+      git
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -319,13 +337,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="contribute-to-pythia.html">
-     Contribute to Project Pythia via GitHub
+    <a class="reference internal" href="review-pr.html">
+     Reviewing Pull Requests
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="github-advanced.html">
-     Advanced GitHub Topics
+    <a class="reference internal" href="github-workflows.html">
+     GitHub Workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="contribute-to-pythia.html">
+     Contribute to Project Pythia via GitHub
     </a>
    </li>
   </ul>
@@ -380,8 +403,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/matplotlib/matplotlib.html">
+    <a class="reference internal" href="../../core/matplotlib/matplotlib-basics.html">
      Matplotlib Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/histograms-piecharts-animation.html">
+     Histograms, Pie Charts, and Animations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/annotations-colorbars-layouts.html">
+     Annotations, Colorbars, and Advanced Layouts
     </a>
    </li>
   </ul>
@@ -415,7 +448,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../core/datetime/datetime.html">
-     Times and dates in Python
+     Times and Dates in Python
     </a>
    </li>
   </ul>
@@ -465,7 +498,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/xarray/xarray.html">
+    <a class="reference internal" href="../../core/xarray/xarray-intro.html">
      Introduction to Xarray
     </a>
    </li>
@@ -479,6 +512,11 @@
      Calculating ENSO with Xarray
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/xarray/dask-arrays-xarray.html">
+     Dask Arrays with Xarray
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -490,7 +528,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/how-to-contribute.html">
-   Pythia Foundations contributor’s guide
+   Pythia Foundations Contributor’s Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -666,7 +704,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
               
               <div>
                 
-  <a class="reference internal image-reference" href="../../_images/GitHub-logo.png"><img alt="Github Logo" src="../../_images/GitHub-logo.png" style="width: 600px;" /></a>
+  <a class="reference internal image-reference" href="../../_images/GitHub-logo.png"><img alt="GitHub Logo" src="../../_images/GitHub-logo.png" style="width: 400px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="what-is-github">
 <h1>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="section" id="overview">
@@ -774,8 +812,8 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <h2>Register for a free GitHub account<a class="headerlink" href="#register-for-a-free-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>While one can freely browse GitHub repositories such as Xarray anonymously, it’s necessary to log into a unique (and free) user account in order to take advantage of GitHub’s full capabilities, such as:</p>
 <ol class="simple">
-<li><p>Opening issues and pull requests</p></li>
-<li><p>Participate in discussions</p></li>
+<li><p>Opening Issues and Pull Requests</p></li>
+<li><p>Participate in Discussions</p></li>
 <li><p>Host your own repository</p></li>
 </ol>
 <p>Your next step (if you haven’t already) should be to register for your free GitHub account. As with many online services, you will choose a user id, password, and specify an email address to use with your account.</p>
@@ -816,7 +854,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./foundations/github"
         },
         predefinedOutput: true
@@ -831,13 +869,13 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting started with GitHub</p>
+            <p class="prev-next-title">Getting Started with GitHub</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="github-repos.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GitHub repositories</p>
+        <p class="prev-next-title">GitHub Repositories</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -963,7 +1001,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 16 February 2022.
+          Last updated on 27 February 2023.
         </p>
       </div>
     </div>

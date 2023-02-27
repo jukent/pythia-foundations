@@ -28,9 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -38,23 +37,26 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Advanced GitHub Topics" href="github-advanced.html" />
-    <link rel="prev" title="Opening a Pull Request on GitHub" href="github-pull-request.html" />
+    <link rel="next" title="Overview" href="../../core/overview.html" />
+    <link rel="prev" title="GitHub Workflows" href="github-workflows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,14 @@
     
     
     
-    <a class="nav-link nav-internal" href="https://projectpythia.org/gallery.html">Gallery</a>
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
   </li>
   
   <li class="nav-item">
@@ -146,6 +155,12 @@
           <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
             <span><i class="fab fa-twitter-square"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
           </a>
         </li>
       </ul>
@@ -202,7 +217,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../getting-started-python.html">
-   Getting started with Python
+   Getting Started with Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -212,7 +227,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../quickstart.html">
-     Quickstart: zero to Python
+     Quickstart: Zero to Python
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -261,14 +276,14 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../markdown.html">
-     Formatted text in the notebook with Markdown
+     Formatted Text in the Notebook with Markdown
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../getting-started-github.html">
-   Getting started with GitHub
+   Getting Started with GitHub
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -283,7 +298,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-repos.html">
-     GitHub repositories
+     GitHub Repositories
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,12 +313,15 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-setup-advanced.html">
-     Advanced GitHub Setup
+     Configuring Your GitHub Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basic-git.html">
-     Basic version control with git
+     Basic Version Control with
+     <em>
+      git
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -316,14 +334,19 @@
      Opening a Pull Request on GitHub
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Contribute to Project Pythia via GitHub
+   <li class="toctree-l2">
+    <a class="reference internal" href="review-pr.html">
+     Reviewing Pull Requests
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="github-advanced.html">
-     Advanced GitHub Topics
+    <a class="reference internal" href="github-workflows.html">
+     GitHub Workflows
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Contribute to Project Pythia via GitHub
     </a>
    </li>
   </ul>
@@ -378,8 +401,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/matplotlib/matplotlib.html">
+    <a class="reference internal" href="../../core/matplotlib/matplotlib-basics.html">
      Matplotlib Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/histograms-piecharts-animation.html">
+     Histograms, Pie Charts, and Animations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/annotations-colorbars-layouts.html">
+     Annotations, Colorbars, and Advanced Layouts
     </a>
    </li>
   </ul>
@@ -413,7 +446,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../core/datetime/datetime.html">
-     Times and dates in Python
+     Times and Dates in Python
     </a>
    </li>
   </ul>
@@ -463,7 +496,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/xarray/xarray.html">
+    <a class="reference internal" href="../../core/xarray/xarray-intro.html">
      Introduction to Xarray
     </a>
    </li>
@@ -477,6 +510,11 @@
      Calculating ENSO with Xarray
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/xarray/dask-arrays-xarray.html">
+     Dask Arrays with Xarray
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -488,7 +526,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/how-to-contribute.html">
-   Pythia Foundations contributor’s guide
+   Pythia Foundations Contributor’s Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -613,7 +651,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-pull-request">
-   Create a pull request
+   Create a Pull Request
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -632,14 +670,15 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="contribute-to-project-pythia-via-github">
+  <a class="reference internal image-reference" href="../../_images/GitHub-logo.png"><img alt="GitHub Logo" src="../../_images/GitHub-logo.png" style="width: 400px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="contribute-to-project-pythia-via-github">
 <h1>Contribute to Project Pythia via GitHub<a class="headerlink" href="#contribute-to-project-pythia-via-github" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="section" id="overview">
 <h2>Overview:<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ol class="simple">
 <li><p>Suggest a change</p></li>
 <li><p>Make the edits</p></li>
-<li><p>Create a pull request</p></li>
+<li><p>Create a Pull Request</p></li>
 </ol>
 </div>
 <div class="section" id="prerequisites">
@@ -652,7 +691,39 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Prior GitHub Sections</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="what-is-github.html"><span class="doc std std-doc">What is GitHub</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="github-repos.html"><span class="doc std std-doc">GitHub Repositories</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="github-cloning-forking.html"><span class="doc std std-doc">Cloning and Forking</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="basic-git.html"><span class="doc std std-doc">Basic Version Control with <em>git</em></span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="github-issues.html"><span class="doc std std-doc">Issues and Discussions</span></a></p></td>
+<td><p>Recommended</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="git-branches.html"><span class="doc std std-doc">Branches</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="github-pull-request.html"><span class="doc std std-doc">Pull Requests</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="review-pr.html"><span class="doc std std-doc">Reviewing Pull Requests</span></a></p></td>
+<td><p>Recommended</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="xref myst">GitHub Workflows</span></p></td>
 <td><p>Necessary</p></td>
 <td><p></p></td>
 </tr>
@@ -672,7 +743,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 <div class="section" id="make-the-edits">
 <h2>Make the edits<a class="headerlink" href="#make-the-edits" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>We will follow the <a class="reference external" href="https://foundations.projectpythia.org/foundations/github/github-pull-request.html#forking-workflow">Forking Workflow</a> described in the previous section of this tutorial, assuming <code class="docutils literal notranslate"><span class="pre">pythia-foundations</span></code> has already been forked:</p>
+<p>We will follow the <a class="reference external" href="https://foundations.projectpythia.org/foundations/github/github-workflows.html#forking-workflow">Forking Workflow</a> described in the previous section of this tutorial, assuming <code class="docutils literal notranslate"><span class="pre">pythia-foundations</span></code> has already been forked:</p>
 <ul class="simple">
 <li><p>Create a new branch with a descriptive name</p></li>
 <li><p>Make the changes and commit them locally</p></li>
@@ -680,24 +751,24 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <li><p>Open a PR on GitHub</p></li>
 </ul>
 <p>First, making the new branch,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch clarify-sst-tos
-git checkout clarify-sst-tos
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>clarify-sst-tos
+git<span class="w"> </span>checkout<span class="w"> </span>clarify-sst-tos
 </pre></div>
 </div>
 <p>There are a variety of ways to make changes, depending on the type of file, as well as preference. Here we want to edit a Jupyter Notebook (file extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), so we can use JupyterLab. We find the file of interest at <code class="docutils literal notranslate"><span class="pre">/core/xarray/computation-masking.ipynb</span></code> and add in some text:</p>
 <img alt="Notebook in JupyterLab" src="../../_images/GitHubContrJupyterLab.png" />
 <p>After saving and exiting (and checking for changes with a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>), we commit with the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add core/xarray/computation-masking.ipynb
-git commit -m <span class="s1">&#39;Mention that SST is called tos in the model&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>core/xarray/computation-masking.ipynb
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Mention that SST is called tos in the model&#39;</span>
 </pre></div>
 </div>
 <p>Then pushing to our remote aliased <code class="docutils literal notranslate"><span class="pre">origin</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin clarify-sst-tos
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>clarify-sst-tos
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-pull-request">
-<h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h2>Create a Pull Request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Now, going to our remote repo on GitHub, forked from <code class="docutils literal notranslate"><span class="pre">pythia-foundations</span></code>, we see that recent changes have been made. By clicking on the “Compare &amp; pull request” button, we can open a PR, proposing that our changes be merged into the main branch of <code class="docutils literal notranslate"><span class="pre">ProjectPythia/pythia-foundations</span></code>.</p>
 <img alt="GitHub Forked Repo" src="../../_images/GitHubContrFork.png" />
 <p>Project Pythia has an automated reviewer system: when a PR is created, two members of the organization will be randomly chosen to review it. If your PR is not immediately ready to be approved and merged, open it as a draft to delay the review process. As shown in this <a class="reference external" href="https://foundations.projectpythia.org/foundations/github/git-branches.html#merging-branches">Git Branches section</a>, the “Draft pull request” button is found using the arrow on the “Create pull request” button.</p>
@@ -728,7 +799,7 @@ git commit -m <span class="s1">&#39;Mention that SST is called tos in the model&
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./foundations/github"
         },
         predefinedOutput: true
@@ -739,17 +810,17 @@ git commit -m <span class="s1">&#39;Mention that SST is called tos in the model&
               </div>
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="github-pull-request.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="github-workflows.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Opening a Pull Request on GitHub</p>
+            <p class="prev-next-title">GitHub Workflows</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="github-advanced.html" title="next page">
+    <a class='right-next' id="next-link" href="../../core/overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced GitHub Topics</p>
+        <p class="prev-next-title">Overview</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -875,7 +946,7 @@ git commit -m <span class="s1">&#39;Mention that SST is called tos in the model&
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 16 February 2022.
+          Last updated on 27 February 2023.
         </p>
       </div>
     </div>

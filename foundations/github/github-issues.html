@@ -28,9 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -38,23 +37,26 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Cloning and Forking a Repository" href="github-cloning-forking.html" />
-    <link rel="prev" title="GitHub repositories" href="github-repos.html" />
+    <link rel="prev" title="GitHub Repositories" href="github-repos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,14 @@
     
     
     
-    <a class="nav-link nav-internal" href="https://projectpythia.org/gallery.html">Gallery</a>
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
   </li>
   
   <li class="nav-item">
@@ -146,6 +155,12 @@
           <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
             <span><i class="fab fa-twitter-square"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
           </a>
         </li>
       </ul>
@@ -202,7 +217,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../getting-started-python.html">
-   Getting started with Python
+   Getting Started with Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -212,7 +227,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../quickstart.html">
-     Quickstart: zero to Python
+     Quickstart: Zero to Python
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -261,14 +276,14 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../markdown.html">
-     Formatted text in the notebook with Markdown
+     Formatted Text in the Notebook with Markdown
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../getting-started-github.html">
-   Getting started with GitHub
+   Getting Started with GitHub
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -283,7 +298,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-repos.html">
-     GitHub repositories
+     GitHub Repositories
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -298,12 +313,15 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github-setup-advanced.html">
-     Advanced GitHub Setup
+     Configuring Your GitHub Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basic-git.html">
-     Basic version control with git
+     Basic Version Control with
+     <em>
+      git
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -317,13 +335,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="contribute-to-pythia.html">
-     Contribute to Project Pythia via GitHub
+    <a class="reference internal" href="review-pr.html">
+     Reviewing Pull Requests
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="github-advanced.html">
-     Advanced GitHub Topics
+    <a class="reference internal" href="github-workflows.html">
+     GitHub Workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="contribute-to-pythia.html">
+     Contribute to Project Pythia via GitHub
     </a>
    </li>
   </ul>
@@ -378,8 +401,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/matplotlib/matplotlib.html">
+    <a class="reference internal" href="../../core/matplotlib/matplotlib-basics.html">
      Matplotlib Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/histograms-piecharts-animation.html">
+     Histograms, Pie Charts, and Animations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/matplotlib/annotations-colorbars-layouts.html">
+     Annotations, Colorbars, and Advanced Layouts
     </a>
    </li>
   </ul>
@@ -413,7 +446,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../core/datetime/datetime.html">
-     Times and dates in Python
+     Times and Dates in Python
     </a>
    </li>
   </ul>
@@ -463,7 +496,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../core/xarray/xarray.html">
+    <a class="reference internal" href="../../core/xarray/xarray-intro.html">
      Introduction to Xarray
     </a>
    </li>
@@ -477,6 +510,11 @@
      Calculating ENSO with Xarray
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/xarray/dask-arrays-xarray.html">
+     Dask Arrays with Xarray
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -488,7 +526,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/how-to-contribute.html">
-   Pythia Foundations contributor’s guide
+   Pythia Foundations Contributor’s Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -602,6 +640,11 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-issues-and-discussions">
+   What are Issues and Discussions?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#issues">
    Issues
   </a>
@@ -623,6 +666,11 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -634,12 +682,15 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="issues-and-discussions">
+  <a class="reference internal image-reference" href="../../_images/GitHub-logo.png"><img alt="GitHub Logo" src="../../_images/GitHub-logo.png" style="width: 400px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="issues-and-discussions">
 <h1>Issues and Discussions<a class="headerlink" href="#issues-and-discussions" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="section" id="overview">
 <h2>Overview:<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ol class="simple">
-<li><p>Examine an existing issue and discussion</p></li>
+<li><p>What are Issues and Discussions?</p></li>
+<li><p>Examine an existing Issue</p></li>
+<li><p>Examine an existing Discussion</p></li>
 </ol>
 </div>
 <div class="section" id="prerequisites">
@@ -652,7 +703,11 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Prior GitHub Sections</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="what-is-github.html"><span class="doc std std-doc">What is GitHub?</span></a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="github-repos.html"><span class="doc std std-doc">GitHub Repositories</span></a></p></td>
 <td><p>Necessary</p></td>
 <td><p></p></td>
 </tr>
@@ -663,17 +718,39 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </ul>
 </div>
 <hr class="docutils" />
+<div class="section" id="what-are-issues-and-discussions">
+<h2>What are Issues and Discussions?<a class="headerlink" href="#what-are-issues-and-discussions" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>GitHub provides two different, but related mechanisms for communicating
+within a repository about a project: <em>Issues</em> and <em>Discussions</em>.
+Issues are more like “todo” items; they are task-focused. For example, Issues
+are often used to report and track bugs, request new features, or
+perhaps note a performance problem. Ultimately, the maintainers of
+a project may resolve the issue by fixing the bug, adding the
+feature, etc., and then closing the resolved issue, marking the
+task as completed. GitHub <em>Discussions</em>, much like the name implies,
+are more open ended, and may not have a resolution. Asking about a
+topic, discussing the merits of a new feature, or even advertising
+an event, such as a tutorial for your project, are all examples
+of <em>Discussions</em>.</p>
+<p>In the text below we discuss <em>Issues</em> in more detail, followed by
+a discussion on Discussions. Keep in mind that when initiating a
+conversation on GitHub it is often unclear whether something is
+more suited as an <em>Issue</em> or a <em>Discussion</em>. We, the creators of
+Project Pythia, struggle ourselves. If you’re not sure, simply pick
+one. Fortunately, the GitHub developers recognized this dilemma and
+made it easy to convert <em>Issues</em> into <em>Discussions</em> and vice versa.</p>
+</div>
 <div class="section" id="issues">
 <h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>As mentioned in the previous section, GitHub Issues and Discussions allow collaboration within a repository. First, let’s take a look at the <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues">Issues page</a> in Project Pythia’s <code class="docutils literal notranslate"><span class="pre">pythia-foundations</span></code> repository:</p>
+<p>To get started, let’s take a look at the <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues">Issues page</a> in Project Pythia’s <code class="docutils literal notranslate"><span class="pre">pythia-foundations</span></code> repository:</p>
 <img alt="Pythia Issues" src="../../_images/GitHubPythiaIssues.png" />
-<p>By default, it shows all open issues, but we can see all <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues?q=is%3Aissue+is%3Aclosed">closed issues</a> by clicking “Closed”.</p>
+<p>By default, it shows all open Issues, but we can see all <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues?q=is%3Aissue+is%3Aclosed">closed Issues</a> by clicking “Closed”.</p>
 <img alt="Pythia Closed Issues" src="../../_images/GitHubPythiaIssuesClosed.png" />
-<p>Issues, Discussions, and Pull Requests are all numbered for easy reference. By opening, resolving, and then closing an issue, we are leaving behind a searchable public record of what the issue was, why we thought it was important, and how we resolved it. This is great for project management, since it gets old issues out of the way without actually deleting them.</p>
+<p>Issues, Discussions, and Pull Requests are all numbered for easy reference. By opening, resolving, and then closing an issue, we are leaving behind a searchable public record of what the issue was, why we thought it was important, and how we resolved it. This is great for project management, since it gets old Issues out of the way without actually deleting them.</p>
 <p>Let’s now examine <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues/144">Issue #144</a>.</p>
 <img alt="Pythia Issue 144" src="../../_images/GitHubPythiaIssue144.png" />
-<p>As you can see, some broken links were found in one of the Pythia Foundations tutorials, likely because the site being linked recently had its structure changed. An additional comment was added, as well as a label to help filtering/sorting issues by topic. We then see that this issue was mentioned (by typing the issue number) elsewhere in the repository. In this case, it was mentioned in <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/pull/145">Pull Request #145</a>, which makes the changes to fix the issue. We can also see that the PR has been merged, which means the changes have been incorporated into the main branch of the code.</p>
-<p>Like this example, issues can notify others of bugs or typos, but they can also be used as “calls to action”, whether you plan on addressing the issue yourself or are hoping that someone else will be interested in making the changes. Issues <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues/97">#97</a> and <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues/98">#98</a> are examples of this, in which ideas for changes are proposed and then addressed at a later time.</p>
+<p>As you can see, some broken links were found in one of the Pythia Foundations tutorials, likely because the site being linked recently had its structure changed. An additional comment was added, as well as a label to help filtering/sorting Issues by topic. We then see that this issue was mentioned (by typing the issue number) elsewhere in the repository. In this case, it was mentioned in <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/pull/145">Pull Request #145</a>, which makes the changes to fix the issue. We can also see that the PR has been merged, which means the changes have been incorporated into the main branch of the code.</p>
+<p>Like this example, Issues can notify others of bugs or typos, but they can also be used as “calls to action”, whether you plan on addressing the issue yourself or are hoping that someone else will be interested in making the changes. Issues <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues/97">#97</a> and <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/issues/98">#98</a> are examples of this, in which ideas for changes are proposed and then addressed at a later time.</p>
 <p>A new issue can be opened by pressing the “New issue” button on the top right of the Issues page. Depending on the repository, you may be prompted to choose from a template, or you may just see title and text boxes to fill out.</p>
 </div>
 <div class="section" id="discussions">
@@ -682,19 +759,29 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <img alt="Pythia Foundations Discussions" src="../../_images/GitHubPythiaDisc.png" />
 <p>Let’s take a look at <a class="reference external" href="https://github.com/ProjectPythia/pythia-foundations/discussions/156">Discussion #156</a>.</p>
 <img alt="Pythia Discussion 156" src="../../_images/GitHubPythiaDisc156.png" />
-<p>This discussion brings up a resource relevant to the repository that could help others, but it is not suggesting a change like an issue would. Other discussions might include announcements, Q&amp;A, or general thoughts about the repository.</p>
+<p>This discussion brings up a resource relevant to the repository that could help others, but it is not suggesting a change like an issue would. Other Discussions might include announcements, Q&amp;A, or general thoughts about the repository.</p>
+<p>GitHub also makes it simple to reference a Discussion in an Issue (and vice-verse),
+which can help provide background and context for a piece of work.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
 <li><p>GitHub provides Issues and Discussions to facilitate collaboration.</p></li>
-<li><p>Issues are specific and actionable, while discussions are open-ended.</p></li>
+<li><p>Issues are specific and actionable, while Discussions are open-ended.</p></li>
+<li><p>If you want to discuss a topic and you’re not sure if it is an Issue
+or a Discussion, just pick one. It will be ok:-)</p></li>
 </ul>
 <div class="section" id="whats-next">
 <h3>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>We will work through cloning and forking an example repository.</p>
 </div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://resources.github.com/devops/process/planning/discussions/">What is GitHub Discussions? A complete guide</a></p></li>
+</ol>
 </div>
 </div>
 
@@ -710,7 +797,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./foundations/github"
         },
         predefinedOutput: true
@@ -725,7 +812,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">GitHub repositories</p>
+            <p class="prev-next-title">GitHub Repositories</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="github-cloning-forking.html" title="next page">
@@ -857,7 +944,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 16 February 2022.
+          Last updated on 27 February 2023.
         </p>
       </div>
     </div>

@@ -1,16 +1,29 @@
+```{image} ../../images/GitHub-logo.png
+:alt: GitHub Logo
+:width: 400px
+```
+
 # Contribute to Project Pythia via GitHub
 
 ## Overview:
 
 1. Suggest a change
 2. Make the edits
-3. Create a pull request
+3. Create a Pull Request
 
 ## Prerequisites
 
-| Concepts              | Importance | Notes |
-| --------------------- | ---------- | ----- |
-| Prior GitHub Sections | Necessary  |       |
+| Concepts                                      | Importance  | Notes |
+| --------------------------------------------- | ----------- | ----- |
+| [What is GitHub](what-is-github)              | Necessary   |       |
+| [GitHub Repositories](github-repos)           | Necessary   |       |
+| [Cloning and Forking](github-cloning-forking) | Necessary   |       |
+| [Basic Version Control with _git_](basic-git) | Necessary   |       |
+| [Issues and Discussions](github-issues)       | Recommended |       |
+| [Branches](git-branches)                      | Necessary   |       |
+| [Pull Requests](github-pull-request)          | Necessary   |       |
+| [Reviewing Pull Requests](review-pr)          | Recommended |       |
+| [GitHub Workflows](git-workflow)              | Necessary   |       |
 
 - **Time to learn**: 30 minutes
 
@@ -28,7 +41,7 @@ We could open an issue to suggest this change in order to get feedback on the id
 
 ## Make the edits
 
-We will follow the [Forking Workflow](https://foundations.projectpythia.org/foundations/github/github-pull-request.html#forking-workflow) described in the previous section of this tutorial, assuming `pythia-foundations` has already been forked:
+We will follow the [Forking Workflow](https://foundations.projectpythia.org/foundations/github/github-workflows.html#forking-workflow) described in the previous section of this tutorial, assuming `pythia-foundations` has already been forked:
 
 - Create a new branch with a descriptive name
 - Make the changes and commit them locally
@@ -59,7 +72,7 @@ Then pushing to our remote aliased `origin`:
 git push origin clarify-sst-tos
 ```
 
-## Create a pull request
+## Create a Pull Request
 
 Now, going to our remote repo on GitHub, forked from `pythia-foundations`, we see that recent changes have been made. By clicking on the "Compare & pull request" button, we can open a PR, proposing that our changes be merged into the main branch of `ProjectPythia/pythia-foundations`.
 
