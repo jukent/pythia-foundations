@@ -1001,7 +1001,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/de98ba519f98acd8fb3941388d2b7453f6cddf00a05385af2e349200987f0e4f.png" src="../../_images/de98ba519f98acd8fb3941388d2b7453f6cddf00a05385af2e349200987f0e4f.png" />
+<img alt="../../_images/cc6e8776ede3958bfe031488b39e17cb3d2f3cab6586cf83de79301223af71ad.png" src="../../_images/cc6e8776ede3958bfe031488b39e17cb3d2f3cab6586cf83de79301223af71ad.png" />
 </div>
 </div>
 <p>We can change which colormap to use by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">cmap</span> <span class="pre">=</span> <span class="pre">'colormap_name'</span></code> in the plotting function call.  This sets the colormap not only for the plot, but for the colorbar as well.  In this case, we use the <code class="docutils literal notranslate"><span class="pre">magma</span></code> colormap:</p>
@@ -1016,7 +1016,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7bd37ded0e558d0912c249655fde0d1b3b7887f55cc73d7e4a6e50f7a1f9801f.png" src="../../_images/7bd37ded0e558d0912c249655fde0d1b3b7887f55cc73d7e4a6e50f7a1f9801f.png" />
+<img alt="../../_images/162720720786f4e94552a2593b0625e69eec4d01c4947ce96cdf4e5852ff25cc.png" src="../../_images/162720720786f4e94552a2593b0625e69eec4d01c4947ce96cdf4e5852ff25cc.png" />
 </div>
 </div>
 </div>
@@ -1035,10 +1035,10 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7efc7848cac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc8082eb970&gt;
 </pre></div>
 </div>
-<img alt="../../_images/3d511a3b75d5be95e471489e825b45a33250c9120e0faacc06a9c6eb836b51f3.png" src="../../_images/3d511a3b75d5be95e471489e825b45a33250c9120e0faacc06a9c6eb836b51f3.png" />
+<img alt="../../_images/d84106e3acefb6efc8c9e77f171ad194dde330efc252afcec0ba438ec05b3275.png" src="../../_images/d84106e3acefb6efc8c9e77f171ad194dde330efc252afcec0ba438ec05b3275.png" />
 </div>
 </div>
 <p>You may be wondering why the call to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code> uses the argument <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code>. The explanation is as follows: <code class="docutils literal notranslate"><span class="pre">hist1</span></code> is a tuple returned by <code class="docutils literal notranslate"><span class="pre">hist2d</span></code>, and <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> contains a <code class="docutils literal notranslate"><span class="pre">matplotlib.collections.QuadMesh</span></code> that points to the colormap for the first histogram. To make sure that both histograms are using the same colormap with the same range of values, <code class="docutils literal notranslate"><span class="pre">vmax</span></code> is set to 0.18 for both plots. This ensures that both histograms are using colormaps that represent values from 0 (the default for histograms) to 0.18. Because the same data values are used for both plots, it doesn’t matter whether we pass in <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> or <code class="docutils literal notranslate"><span class="pre">hist2[3]</span></code> to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code>.
@@ -1119,7 +1119,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5ee5d14bd10dd8285ed66b36fe5dd719a8646bb0784955aab2faa1a070ccaa06.png" src="../../_images/5ee5d14bd10dd8285ed66b36fe5dd719a8646bb0784955aab2faa1a070ccaa06.png" />
+<img alt="../../_images/09e4745b2f7e3ef5804335f241d26983c3aa3877a87b5556416cf4a6559c0bf2.png" src="../../_images/09e4745b2f7e3ef5804335f241d26983c3aa3877a87b5556416cf4a6559c0bf2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1136,7 +1136,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d9e128810ecdd6da2e985b96d25e922874af047f49eef66e88edb2e958d2a54a.png" src="../../_images/d9e128810ecdd6da2e985b96d25e922874af047f49eef66e88edb2e958d2a54a.png" />
+<img alt="../../_images/018379496c340bd6b12237e6d75d5556558b6e9ffb705b801176cd0d1099d9c7.png" src="../../_images/018379496c340bd6b12237e6d75d5556558b6e9ffb705b801176cd0d1099d9c7.png" />
 </div>
 </div>
 <div class="section" id="the-normalize-class">
@@ -1173,7 +1173,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8da18243b05cc5ec6d61295b417f5c441cee0694449b726187df89a4221ca4f8.png" src="../../_images/8da18243b05cc5ec6d61295b417f5c441cee0694449b726187df89a4221ca4f8.png" />
+<img alt="../../_images/3a5c50c45ea65225bca6716d22bace59cf5f648e1b528d994cfe87a79ef98439.png" src="../../_images/3a5c50c45ea65225bca6716d22bace59cf5f648e1b528d994cfe87a79ef98439.png" />
 </div>
 </div>
 <p>You’ll notice there is not a colorbar plotted by default. When constructing the colorbar, we need to specify the following:</p>
@@ -1201,7 +1201,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bf1690059fd41ea065376de6c44084d30b2a73f5875e89d0121d92951cd83e7c.png" src="../../_images/bf1690059fd41ea065376de6c44084d30b2a73f5875e89d0121d92951cd83e7c.png" />
+<img alt="../../_images/fa2897adbfa9b0c522d4719b299447721a3e33f3fc6605f91cfa2399fa49fb49.png" src="../../_images/fa2897adbfa9b0c522d4719b299447721a3e33f3fc6605f91cfa2399fa49fb49.png" />
 </div>
 </div>
 </div>
