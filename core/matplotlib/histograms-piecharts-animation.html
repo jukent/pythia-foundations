@@ -1,104 +1,133 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Histograms, Pie Charts, and Animations &#8212; Pythia Foundations</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css?v=e502140d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6f14dede" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-G57FLM9M46"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-G57FLM9M46');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-G57FLM9M46');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/matplotlib/histograms-piecharts-animation';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Annotations, Colorbars, and Advanced Layouts" href="annotations-colorbars-layouts.html" />
     <link rel="prev" title="Matplotlib Basics" href="matplotlib-basics.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G57FLM9M46"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-G57FLM9M46');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="29 March 2024"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
-    <div class="container-fluid" id="shim"></div>
-    <div class="container-fluid" id="banner"></div>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="https://projectpythia.org">
-  <img src="../../_static/pythia_logo-white-rtext.svg" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
-  <div id="navbar-collapsible" class=" collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <div class="pst-scroll-pixel-helper"></div>
+    <header class="bd-header navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+   
+
+<a class="navbar-brand logo" href="https://projectpythia.org">
+  
+  
+  
+  
+  
+    
+    
       
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+    <img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="Pythia Foundations - Home"/>
+    <script>document.write(`<img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="Pythia Foundations - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
   
   <li class="nav-item">
     
@@ -135,619 +164,344 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="nav-link nav-internal" href="https://projectpythia.org/index.html#join-us">Community</a>
   </li>
   
-  
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/ProjectPythia" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
-            <span><i class="fab fa-youtube-square"></i></span>
-            <label class="sr-only">YouTube</label>
-          </a>
-        </li>
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-    </nav>
-    <div class="container-xl">
-      <div class="row">
-        
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  <li class="nav-item">
     
-        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../landing-page.html">
-   Pythia Foundations
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Preamble
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../preamble/how-to-use.html">
-   How to Use This Book
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../preamble/how-to-cite.html">
-   How to Cite This Book
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Foundational skills
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../foundations/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../foundations/why-python.html">
-   Why Python?
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../foundations/getting-started-python.html">
-   Getting Started with Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/quickstart.html">
-     Quickstart: Zero to Python
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../foundations/how-to-run-python.html">
-     Installing and Running Python
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/blog.html">Blog</a>
+  </li>
+  
+  
+</ul></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ProjectPythia" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/project_pythia" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
     </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../foundations/terminal.html">
-       Python in the Terminal
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../foundations/jupyter.html">
-       Python in Jupyter
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../foundations/conda.html">
-       Installing and Managing Python with Conda
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../foundations/getting-started-jupyter.html">
-   Getting Started with Jupyter
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/jupyterlab.html">
-     JupyterLab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/markdown.html">
-     Formatted Text in the Notebook with Markdown
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../foundations/getting-started-github.html">
-   Getting Started with GitHub
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/what-is-github.html">
-     What is GitHub?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-repos.html">
-     GitHub Repositories
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-issues.html">
-     Issues and Discussions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-cloning-forking.html">
-     Cloning and Forking a Repository
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-setup-advanced.html">
-     Configuring Your GitHub Account
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/basic-git.html">
-     Basic Version Control with
-     <em>
-      git
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/git-branches.html">
-     Git Branches
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-pull-request.html">
-     Opening a Pull Request on GitHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/review-pr.html">
-     Reviewing Pull Requests
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/github-workflows.html">
-     GitHub Workflows
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/github/contribute-to-pythia.html">
-     Contribute to Project Pythia via GitHub
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Core Scientific Python packages
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../numpy.html">
-   NumPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../numpy/numpy-basics.html">
-     NumPy Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../numpy/intermediate-numpy.html">
-     Intermediate NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../numpy/numpy-broadcasting.html">
-     NumPy Broadcasting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../matplotlib.html">
-   Matplotlib
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib-basics.html">
-     Matplotlib Basics
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Histograms, Pie Charts, and Animations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="annotations-colorbars-layouts.html">
-     Annotations, Colorbars, and Advanced Layouts
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../cartopy.html">
-   Cartopy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cartopy/cartopy.html">
-     Introduction to Cartopy
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datetime.html">
-   Datetime
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../datetime/datetime.html">
-     Times and Dates in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../pandas.html">
-   Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pandas/pandas.html">
-     Introduction to Pandas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-formats.html">
-   Data Formats
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-formats/netcdf-cf.html">
-     NetCDF and CF: The Basics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../xarray.html">
-   Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-intro.html">
-     Introduction to Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/computation-masking.html">
-     Computations and Masks with Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/enso-xarray.html">
-     Calculating ENSO with Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/dask-arrays-xarray.html">
-     Dask Arrays with Xarray
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+  
+</div>
+
+    </header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+        
+        
+        
+        <div class="bd-sidebar-primary bd-sidebar">
+          
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org">Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://foundations.projectpythia.org">Foundations</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/index.html#join-us">Community</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/blog.html">Blog</a>
+  </li>
+  
+  
+</ul></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ProjectPythia" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/project_pythia" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../landing-page.html">
+                    Pythia Foundations
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preamble</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../appendix/how-to-contribute.html">
-   Pythia Foundations Contributor’s Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/template.html">
-     Project Pythia Notebook Template
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../preamble/how-to-use.html">How to Use This Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../preamble/how-to-cite.html">How to Cite This Book</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundational skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../foundations/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../foundations/why-python.html">Why Python?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../foundations/getting-started-python.html">Getting Started with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/quickstart.html">Quickstart: Zero to Python</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../foundations/how-to-run-python.html">Installing and Running Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../foundations/terminal.html">Python in the Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../foundations/jupyter.html">Python in Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../foundations/conda.html">Installing and Managing Python with Conda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../foundations/getting-started-jupyter.html">Getting Started with Jupyter</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/jupyterlab.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/markdown.html">Formatted Text in the Notebook with Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../foundations/getting-started-github.html">Getting Started with GitHub</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/what-is-github.html">What is GitHub?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-repos.html">GitHub Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-issues.html">Issues and Discussions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-cloning-forking.html">Cloning and Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-setup-advanced.html">Configuring Your GitHub Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/basic-git.html">Basic Version Control with <em>git</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/git-branches.html">Git Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-pull-request.html">Opening a Pull Request on GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/review-pr.html">Reviewing Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/github-workflows.html">GitHub Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../foundations/github/contribute-to-pythia.html">Contribute to Project Pythia via GitHub</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Scientific Python packages</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numpy.html">NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/numpy-basics.html">NumPy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/intermediate-numpy.html">Intermediate NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/numpy-broadcasting.html">NumPy Broadcasting</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../matplotlib.html">Matplotlib</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="matplotlib-basics.html">Matplotlib Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Histograms, Pie Charts, and Animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations-colorbars-layouts.html">Annotations, Colorbars, and Advanced Layouts</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cartopy.html">Cartopy</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cartopy/cartopy.html">Introduction to Cartopy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datetime.html">Datetime</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datetime/datetime.html">Times and Dates in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pandas.html">Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/pandas.html">Introduction to Pandas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-formats.html">Data Formats</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-formats/netcdf-cf.html">NetCDF and CF: The Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../xarray.html">Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../xarray/xarray-intro.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xarray/computation-masking.html">Computations and Masks with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xarray/enso-xarray.html">Calculating ENSO with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xarray/dask-arrays-xarray.html">Dask Arrays with Xarray</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/how-to-contribute.html">Pythia Foundations Contributor’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/template.html">Project Pythia Notebook Template</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  We want your feedback! Fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVa1TC9xM-dk7qIE2e8bsgSrIP82yYDNw3wew3J46eREJa4w/viewform?usp=sf_link">Google Form</a>
-or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contribute.html">Contributor's Guide</a>.
-
-</div>
-
-</div>
-
-        
-
-        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/core/matplotlib/histograms-piecharts-animation.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/ProjectPythia/pythia-foundations"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/ProjectPythia/pythia-foundations/issues/new?title=Issue%20on%20page%20%2Fcore/matplotlib/histograms-piecharts-animation.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythia/pythia-foundations/edit/main/core/matplotlib/histograms-piecharts-animation.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/pythia-foundations/main?urlpath=lab/tree/core/matplotlib/histograms-piecharts-animation.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histograms">
-   Histograms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pie-charts">
-   Pie Charts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#animations">
-   Animations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-1-initial-state">
-     Step 1: Initial State
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-2-animation-progression-function">
-     Step 2: Animation Progression Function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-3-using-funcanimation">
-     Step 3: Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       FuncAnimation
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-an-animation">
-     Saving an Animation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#whats-next">
-   What’s Next
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-resources">
-   Additional Resources
-  </a>
- </li>
-</ul>
+        
+        <main id="main-content" class="bd-main" role="main">
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-          <div id="main-content" class="row">
-            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-              
-              <div>
+            <div class="bd-content">
+
+              <div class="bd-article-container">
+
                 
+                  
+                  
+<div id="searchbox"></div>
+                  <article class="bd-article">
+                    
   <p><img alt="Matplotlib logo" src="https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="histograms-pie-charts-and-animations">
-<h1>Histograms, Pie Charts, and Animations<a class="headerlink" href="#histograms-pie-charts-and-animations" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="histograms-pie-charts-and-animations">
+<h1>Histograms, Pie Charts, and Animations<a class="headerlink" href="#histograms-pie-charts-and-animations" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>In this section we’ll explore some more specialized plot types, including:</p>
 <ol class="arabic simple">
 <li><p>Histograms</p></li>
 <li><p>Pie Charts</p></li>
 <li><p>Animations</p></li>
 </ol>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<table class="colwidths-auto table">
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -768,10 +522,10 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <ul class="simple">
 <li><p><strong>Time to Learn</strong>: 30 minutes</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Just like in the previous tutorial, we are going to import Matplotlib’s <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> interface as <code class="docutils literal notranslate"><span class="pre">plt</span></code>. We must also import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for working with data arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,9 +535,9 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="histograms">
-<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>We can plot a 1-D histogram using most 1-D data arrays.</p>
 <p>To get the 1-D data array for this example, we generate example data using NumPy’s normal-distribution random-number generator. For demonstration purposes, we’ve specified the random seed for reproducibility. The code for this number generation is as follows:</p>
 <div class="cell docutils container">
@@ -808,7 +562,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ce705619ba2c95c26895c11ce7090dad2350a5cdfb38aa2b50bd20dad99ef825.png" src="../../_images/ce705619ba2c95c26895c11ce7090dad2350a5cdfb38aa2b50bd20dad99ef825.png" />
+<img alt="../../_images/f7ab6be5997415922caf3d38eb50a502bd4f90ee0d83231847caae27232cb41c.png" src="../../_images/f7ab6be5997415922caf3d38eb50a502bd4f90ee0d83231847caae27232cb41c.png" />
 </div>
 </div>
 <p>Similarly, we can make a 2-D histogram, by first generating a second 1-D array, and then calling <code class="docutils literal notranslate"><span class="pre">plt.hist2d</span></code> with both 1-D arrays as arguments:</p>
@@ -821,12 +575,12 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1bd33f37c6a0d83a5bd7b93ce56335d2c63fd4005d4a0b4c3ad39b1f58ee2ad2.png" src="../../_images/1bd33f37c6a0d83a5bd7b93ce56335d2c63fd4005d4a0b4c3ad39b1f58ee2ad2.png" />
+<img alt="../../_images/01ed0885000ca54865bd8f42fdd0f6030dd3b3ce245f590a57f1df3f97599142.png" src="../../_images/01ed0885000ca54865bd8f42fdd0f6030dd3b3ce245f590a57f1df3f97599142.png" />
 </div>
 </div>
-</div>
-<div class="section" id="pie-charts">
-<h2>Pie Charts<a class="headerlink" href="#pie-charts" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="pie-charts">
+<h2>Pie Charts<a class="headerlink" href="#pie-charts" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Matplotlib also has the capability to plot pie charts, by way of <code class="docutils literal notranslate"><span class="pre">plt.pie</span></code>. The most basic implementation uses a 1-D array of wedge ‘sizes’ (i.e., percent values), as shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -836,7 +590,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eb256443880797f004bd047197b62ac22334869a363d8677a9d0f78b7c28f795.png" src="../../_images/eb256443880797f004bd047197b62ac22334869a363d8677a9d0f78b7c28f795.png" />
+<img alt="../../_images/d2f15e0a14c808eb9daddec068bf4942b82da7c07f3ea585ce78b64932594888.png" src="../../_images/d2f15e0a14c808eb9daddec068bf4942b82da7c07f3ea585ce78b64932594888.png" />
 </div>
 </div>
 <p>Typically, you’ll see examples where all of the values in the array <code class="docutils literal notranslate"><span class="pre">x</span></code> will sum to 100, but the data values provided to <code class="docutils literal notranslate"><span class="pre">plt.pie</span></code> do not necessarily have to add up to 100.  The sum of the numbers provided will be normalized to 1, and the individual values will thereby be converted to percentages, regardless of the actual sum of the values.  If this behavior is unwanted or unneeded, you can set <code class="docutils literal notranslate"><span class="pre">normalize=False</span></code>.</p>
@@ -849,7 +603,7 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00c7dc6fe3b8bf7d5083574c281efa57a75afe7e569c0636acbe4f1ba17465a1.png" src="../../_images/00c7dc6fe3b8bf7d5083574c281efa57a75afe7e569c0636acbe4f1ba17465a1.png" />
+<img alt="../../_images/f6e43cee4565e158aefb865cdcf7009df437390a6597dc47b8ec420b046c024d.png" src="../../_images/f6e43cee4565e158aefb865cdcf7009df437390a6597dc47b8ec420b046c024d.png" />
 </div>
 </div>
 <p>Let’s do a more complicated example.</p>
@@ -869,12 +623,12 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/10948e7961b3734e650032aa32be81879468aab2d44beb7621345557aaf13f15.png" src="../../_images/10948e7961b3734e650032aa32be81879468aab2d44beb7621345557aaf13f15.png" />
+<img alt="../../_images/9aed711df8b4ad8015f1206810199077602c52e8b7f910d817d56dcbb5c5c950.png" src="../../_images/9aed711df8b4ad8015f1206810199077602c52e8b7f910d817d56dcbb5c5c950.png" />
 </div>
 </div>
-</div>
-<div class="section" id="animations">
-<h2>Animations<a class="headerlink" href="#animations" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="animations">
+<h2>Animations<a class="headerlink" href="#animations" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Matplotlib offers a single commonly-used animation tool, <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code>. This tool must be imported separately through Matplotlib’s animation package, as shown below. You can find more information on animation with Matplotlib at the <a class="reference external" href="https://matplotlib.org/stable/api/animation_api.html">official documentation page</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -890,8 +644,8 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 <li><p>Create the animation using FuncAnimation</p></li>
 </ol>
 <p>For this example, let’s create an animated sine wave.</p>
-<div class="section" id="step-1-initial-state">
-<h3>Step 1: Initial State<a class="headerlink" href="#step-1-initial-state" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<section id="step-1-initial-state">
+<h3>Step 1: Initial State<a class="headerlink" href="#step-1-initial-state" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>In the initial state step, we will define a function called <code class="docutils literal notranslate"><span class="pre">init</span></code>.  This function will then create the animation plot in its initial state.  However, please note that the successful use of <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> does not technically require such a function; in a later example, creating animations without an initial-state function is demonstrated.</p>
 <p>First, we’ll define <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects.  After that, we can create a line-plot object (referred to here as a line) with <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>. To create the initialization function, we set the line’s data to be empty and then return the line.</p>
 <p>Please note, this code block will display a blank plot when run as a Jupyter notebook cell.</p>
@@ -911,12 +665,12 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d157c613b085ec2afc8f6fb2014b5961aeab1279f613ae132587aa4bb8026f67.png" src="../../_images/d157c613b085ec2afc8f6fb2014b5961aeab1279f613ae132587aa4bb8026f67.png" />
+<img alt="../../_images/dfd6fd4b31e9fb1d5f1872ca3c834b22eb3a085612997ba969da4b7ed5f887c0.png" src="../../_images/dfd6fd4b31e9fb1d5f1872ca3c834b22eb3a085612997ba969da4b7ed5f887c0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="step-2-animation-progression-function">
-<h3>Step 2: Animation Progression Function<a class="headerlink" href="#step-2-animation-progression-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="step-2-animation-progression-function">
+<h3>Step 2: Animation Progression Function<a class="headerlink" href="#step-2-animation-progression-function" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>For this step, we create a progression function, which takes an index (usually named <code class="docutils literal notranslate"><span class="pre">n</span></code> or <code class="docutils literal notranslate"><span class="pre">i</span></code>), and returns the corresponding (in other words, <code class="docutils literal notranslate"><span class="pre">n</span></code>-th or <code class="docutils literal notranslate"><span class="pre">i</span></code>-th) frame of the animation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -932,9 +686,9 @@ or see our <a href="https://foundations.projectpythia.org/appendix/how-to-contri
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-3-using-funcanimation">
-<h3>Step 3: Using <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code><a class="headerlink" href="#step-3-using-funcanimation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="step-3-using-funcanimation">
+<h3>Step 3: Using <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code><a class="headerlink" href="#step-3-using-funcanimation" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>The last step is to feed the parts we created to <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code>. Please note, when using the <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> function, it is important to save the output in a variable, even if you do not intend to use this output later.  If you do not, Python’s garbage collector may attempt to save memory by deleting the animation data, and it will be unavailable for later use.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,7 +716,7 @@ Ry00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAyMiAtIGh0dHA6Ly93d3cudmlkZW9sYW4u
 b3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFs
 eXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVk
 X3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBk
-ZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMg
+ZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTYg
 bG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRl
 cmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJf
 cHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9
@@ -1273,8 +1027,8 @@ HlBPhbjhGBC/HEnSSr6W6n+0VItfmzx6VKtmiWk3cBpnvJN+7cE9xTI7xLUWOoT3QOrFaS2wFRZl
 xiVrAJ95gDYnSsu5SQSCZ5FNM9C/5zO2Ti9lg/9fQG8yNxix7h7nFYaGdM2wTL03pS/1gTScaYbX
 1eCEwaDOCqKGk7I8V4Qd3Hakud/jWc9iOPW9jUXah1pB3D6L4K972AHnwJMvK/DMtcdjl17G7qF3
 y9ZlBZeOoTV2lm6SSc8SBzQ+F294CMqUB0RhA7rbaHyjJvrgGZRJfywqXvfoGSYDcL3xuP858Ziu
-Gpi6XadtewycBIV/xLy6G5TWnUlEa1p1ho6VfW5HTh+q9aQUmEUePLUmAnf7oQf2OEVD1XaCLd8e
-6F4fCESMm+i3YgOnpEefCHSxmhrG2ODr2yLiKVrVDt//aLUPM6FqSbz1vYk9IQAAAyJBmy9J4Q8m
+Gpi6XadtewycBIV/xLy6G5TWnUlEa1p1ho6VfW5HTh+q9aQUmEUePLnctAC1DV2OEVD1XaCLd77z
+Q6RC32Na3wAR7IcZBmWi/UrYnO4wFMR+DN2coD7AO4+dT4bUoAJF3o6NLV/pFwAAAyJBmy9J4Q8m
 UwU8K//+OEAAEm6JqtwRw4ADh8HTkqCWhi5enK/quxildXohvuN8ii4WVVvFYinVNGP86hyi/GP/
 yHVUUAPIjeTTDqy1XCLQe5eTmEmm7nxkKca0lsNOXgZMGoIVaD6Z208AiE9FKkPYzw4Fi1XfBZ5f
 CiXq/mlZ4gK0Ri5NSHvcuZGX6E92oaYJutXcHfbrWJ5cDv3KZztaxv2CGEm1ffqwYRNbNNEjPAtb
@@ -2572,7 +2326,7 @@ P5vLC/5T3LzmlZMTXwXgfhRXMBTGq5tt9RFkpV76tC/9EkPjj+V5X0g+80YtD5b4KhWSD5laMX9U
 hjILIztVaqtm3uDCWS2YGSzC75F5IyikDl15uhY0OKs8S7XknHAXQ+d+11aekvrcIPvzCS1dBACk
 b6buOElmeQfQ09f3qgDXWiD178pTX6uY3n08sFSOf68OBUtCEvt7gQYPtIQ9HjNb6/OizrFAoT2W
 RoUNAnIsP5t4REoH+JxMQ92dTiloAA2m2jbliktVDCb9Jm7PtV6mUpYOLdxoh0EDTL73nAlSVT9f
-FG3BDI43wCcSHYULKZwnQKOOQ+Ifv2XvpMhBAAAB+gGfempH/wAG5+slhuQj9KzQ7QYuwd2BgJ/D
+FG3BDI43wCcSHYULKZwnQKOOQ+Ifv2XvpMhBAAAB+wGfempH/wAG5+slhuQj9KzQ7QYuwd2BgJ/D
 Tq1d8KIIiDJOUZ6rT90hF54QWDyZpr7to9OXxuHA1ZDL5ugHyQWyWUcyT+PGXZIzKcgixZvrete0
 FWSLEhhjyzUga1KCL30q9XQ72PTbnqxdwZ8xZiwJkD5OfAAuGD3ugXnN+JiXGq0yoz1Vl3YaJf0V
 DH03rNwhWQ8JSjmsXLh7uw9Cdrsah24IcLmYfGg5lE/OvQGNhSb2cC7m1VCC7sylBm0qSRwnLWjv
@@ -2580,126 +2334,126 @@ BpytY5isYHU9Od5gxkJ0TAbbL8G3UR/3woc/d3RG44JlfBqfoLVZNrUqjMOKYXsPnJ9u7UOeKNCC
 M7+B7DR4UMnVGkWzHjJGKMpt/deVaB5omp+cOiaXKc0Y49KJqDJRjdAXz2zVBf3WoLb4NC3cvNjB
 gpA/ONtl0Nh/0eU4hqJqQVyh/ca5RsYKC+Va/QNw3Oqi2YOTJ5NsEq2OkZPjZro0jWCRcIWSKk80
 t6zXb0CotnHY7sDGD1oFOJBJ8FAhku+DyFGUe+HWUGaOk+xnO+C1q2rVZf/5nQbACXayIlhUU/e1
-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
+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
@@ -2933,7 +2687,7 @@ wzjQsA/E2jFLblRtXy7qAWg9ofxWfWH8DLFvEu0m9OYOqBxE8FUFVT8P1YxTxN3dGAla7jxSnFD1
 HfsJFeQKAB2eQ3scYzwTV74VqlvZJpsTKT6BfdSOu7pvBIl/qj5E4EnsMCmv5PvehIR6ewizHD74
 eRubrpiDDFSyCcCHr5qf23W0iPnsdH964rMxrZvubrlkzD/9BBD2+tLfGmxcSOmsn0wBV2MPyH8j
 G9MDFuTC2wYybdaXMIFncqgjiCziZ4frcI/fn3Ssqs37JCmOBwJH7fTAOKXFLaTPAmq/rT+uLRRP
-JYNw1cGJW3aiP+2ztlCRCnOA9WH9k/sTB65Vm0ZWhL0cY/ZNkUdc5bpWCeb+F+gHHGYpbTAinnz0
+JYNw1cGJW3aiP+2ztlCRCnOA9V4Rk/sTB65Vm0ZWhL0cY/ZNkUdc5bpWCeb+F+gHHGYpbTAinnz0
 eFPlnnNMHWQ2PU6aCVgHDEsag7kOtUJg2N/wAAADEkGbu0nhDyZTBTwr//44QAASbomtDimsjlVg
 AcHcZ27cmlJMqI+i5pO/nS/nPSjYriM5FwYlW1lmr+qREHdoIowzfiwBl4VzHK9JBaWmVWcHY6mJ
 lsJfSZPYuTWBwyPZto6UVEsySkN/YxDjjE3LgScPjpG9EBfoy8YHDOosrXbkhc3PjKLV79OKax21
@@ -3050,7 +2804,7 @@ XGT1Xn001oTVGIeu3RyCTwuKfQPpLw7VJHn9+yoyWQ/gt1J6w3irba3wyP6RcBAjfZMApXxolTGS
 AvKbnWalODkt1ypgV0VEg4kAqxa6oxbWTa+zdBVcS5LwemYdbIw9mUvq+A7Px4NgBdGsDfgFPJ7S
 VANpl0JWf3Fc8sYcaRi2xlwSv8m/fz5x0zuXCY0eOfUpg1dkZBJHwBwyt7ibN5Hh8xV3Lo7HEq24
 3LHuNlKK+wD+XbgeEiluvr9wUeajY7ogbaRVvan+F8laa3noAV82wCkam2dwkvgWP/Y9Pg9+lhNh
-X55Ma8ceUAWMtU+heucEq0ofXi8AyCgTUzYwI7z2xcCAYlPxqakG5hORQZVbRzEiOfw5/6ryo6Uc
+X55Ma8ceUAWMtU+heucEq0ofXi8AyCgTUzYwI7z2xcCAYlPxL6kG5hORQZVbRzEiOfw5/6ryo6Uc
 6VdL81DdBHZT2vQsWrrc8cQklac7z5/QAAAC2kGaZUnhDyZTBTwr//44QAASbomq3BJWIAWtw6j3
 eRs9I92YlCPJfazDVC73G4pXGa5jQnr78lnYeO+ABcqZ+izn0hD6OnlSmQ+i8GqGxsIE/V4c8RI9
 ZK1FvOcQaBp4vZIqsomFuaHt8m/tk724iJI4bxqM/3r/lfT70EErIPU7sJLs/gsBfTQz82xvm+gz
@@ -3168,7 +2922,7 @@ PhyHZlUqJ03qW+UNMKyoR3x22792PR3A5AsBj8rTuFDv/EjS7NxOWkZGmG5yuElT2aU44Az/cdEF
 f8Zc89m/hPQqkR88MypyYOFMfo2zlhwb7r76CZHVMqZVgTF4x0aY2aVin0MBb6hn18d0sKdgSGSh
 aamLDAWeef1iOIwUxxAc6QCVcHuuG9o88gnUuraz8bTV1CU0N9zI7dWFkDeV1sLJ84yalcqlaILY
 RekdDaDCfIiqY5NsMEeuXbnopMrOvcyq19f/Oqt9zP7jt+WwKcLfCdbsT9aOLzlTA4dp3qMMdIQe
-6sib1vqRMEX5TLxJR0wPfLydB7T68WeExKOpSvm+qc7ezppxdOxNHdi5lKk9YgNvGfqQCzcdk8zC
+6siaH3qRMEX5TLxJR0wPfLydB7T68WeExKOpSvm+qc7ezppxdOxNHdi5lKk9YgNvGfqQCzcdk8zC
 zDOJFdAlzAhKIrNCwF89MQAAAyRBmy9J4Q8mUwU8K//+OEAAEm6JrQ4prI5VYAHDYr2PhqqNeCc/
 ut/x3rbYR6vnr5VR61yxLPf+SbRGCBgR2jWlJA00OHqsi2byGwLT5Wl91xewjqQcF7Ah+vXVcCvb
 iADri01bHhmrRx4hPr+ts2XdsDucH/r75fOwAlkICeNUtPzMSzeApFsJFcVAc0KtzQeI0XCrxQKs
@@ -3283,8 +3037,8 @@ WzPVkNoYL3lLmSJaYGWizVN7raeh3oeAosS22kiTj1uTXFI48ZKlpr2+K8eEsPDH6QNQDpKykJlt
 fEc7ifc1cEKZDPiEs5SM/zN65h0NUtKmEjFP9na+h9DEvgNmMe5u5/7+4wI2AZiLML+HMQctahYu
 5WYOt5pRESIojdnzoBWeM8U7sL1OfvMhJv1IGrkp+6KWozFg/Atzdi42aO5INWBpVaXxXWsqnrnF
 OK2t9vqicf26DiAje+i2+gXa6hqzgT/woJZxA0siGE9xvUwccCHJY/xGgRvG4i73QhiRH6vJfjEG
-GistUnC7KRiYCR9mL8DglignufegF2JhTptwPVLbAKlsmwsMxt41Wf7ZrOS5+veRo9FE7mjzerDx
-L2VFFDxfK4qQyTd7nNVJPRNySPNigF4sjHtINXIhzDiaHdyT5ejARc9wJk06bKxiShsq4twMMlUI
+GistUnC7KRiYCR9mL8DglignufegF2JhTptwPVLbAKlsmwsMxt41Wf7ZrOS5+veRo29k7mjzerDx
+L2VFFDxfK4qQyTd7nNVJPRNySPNigF4sjHtINWx9TDiaHdyT5ejARc9wJk06bKxiShsq4twMMlUI
 sQAAAvdBm/lJ4Q8mUwU8K//+OEAAElUScp5zvc59AC1Q1vECAx5NbERGQ0b+0J647GJomsBKchGj
 PuJV2YLd6I56bG3orEAfMQZs8oUYMY6Aa9NTvjZ32fIMqyBnFEuR9OkbGwdRx/BqjMQmu0Ns0XPu
 MWq09yOs44Wz1eLkGbWJngXMDgZbc99nQGEzf/Xihq0LpqYKN5WELOdQ7vzn293rcVmLMctii/SE
@@ -3398,7 +3152,7 @@ ZBB0bDkCMsOIxyEhfGbRcIKoNnygttkCO3KKCQWVn2ABcMIPuZdbOnrQdjU2svCi3nEzJHPgMQKp
 CYeGXGqbk6ZyxtzerzQh8fjx4FkbopfZTfsME4DYn/tjRM0vaslXcrytW+0BrecnFf2Fru/6XnGt
 PSROwtOWQDc4BHHlmk8ym+Os/Q/OEwPgVav/fLtBgz/N357vTmHIG5FLFyeE0RzceruzN+oC+5Sf
 BVPoDeT112CQNT5sVGa/hAc6uysxXY+vGFu1QSYMwziqQSkUeFtgOlkk0Vz346KlRm00VKP7I1PJ
-c9AO+YC2vSA+BYp960DYKRAnj26PGriFrWyPDBOrBzIzA8BM/HTxya+7w4pmSDaT0WSs6W/bIJuJ
+c9AO+YC2vSA+BYp960DYKRAnj26PGriFrWyPDBOrBzIzA8BM/HTxya+7w3UqSDaT0WSs6W/bIJuJ
 KnDtSjJFBf11Czz/icqQX1PcKdu5s8IVs4Htl/d1O7zM+zfjTzLSt54xBALA/gF/gd85ZRJa1Nco
 FIoW5/3IeAAAArlBmqNJ4Q8mUwU8J//98QAALZyfWYW1OkALYwX0BFu37kODATyfQ/L7OUFC070e
 Wyhyj/8cqKmaYqxERUki9THxqVM3o0+vS/oJf1xaHFaOeiht41oN5xtepK1BupVQT4GG0b4WGLrl
@@ -3458,7 +3212,7 @@ oTyeD6jEZ8xOuB7NjEg0FdjMjyAD/MFzIlV/N99qGkh2LxhVbKdKXNbJiQaER4HI5G9aYjizjHzb
 5xvhVm2pMAJrQcAsb9PPR/u8VJlAaDq/i/nw/gCvCDVIVlrnnXju1SkLpnaf0VNSyce0vgfTkK9D
 HuSR7JUfYcT4Qo36JSzORvsSVEP8/45UM0F5KfDJ58AntsBkgXM2gAW1qtI11YJ2RiRYObBkP0rs
 Tcuj4WGJsYxJZNyQKYozE/f8EWpeb8CXgEQOKNhI8mz49ILOpmNq74z97xPnpjEtcaDYYjrZcyOv
-94rv3S34xbWun6xGSKWAe+yU6yEjA4uPaRTDkdN7Uj6laE9jAQy61lwaN8fwnBqYMCEAAAvxbW9v
+94rv3S34xbWun6xGSKWAe+yU6yEjA4uPaRTDkdN7Uj6laE9jAQy61lwaN8fwnBqYMCEAAAvybW9v
 dgAAAGxtdmhkAAAAAAAAAAAAAAAAAAAD6AAAD6AAAQAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA
 AAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACxx0
 cmFrAAAAXHRraGQAAAADAAAAAAAAAAAAAAABAAAAAAAAD6AAAAAAAAAAAAAAAAAAAAAAAAEAAAAA
@@ -3505,21 +3259,21 @@ AAG9AAAC8AAAAw8AAAOlAAABowAAA2YAAAHtAAAC8QAAAfMAAAL9AAABywAAAxwAAAMrAAADjAAA
 AYIAAANSAAAB9AAAAx0AAAH2AAADIQAAAc0AAAMdAAADMQAAA4oAAAF6AAADUwAAAfYAAALkAAAC
 KgAAAuUAAAHgAAADJwAAA14AAAOyAAABmQAAA1oAAAHpAAAC3QAAAh0AAAMbAAAB0QAAAtsAAAM3
 AAADhgAAAaEAAAN7AAAB6AAAAswAAAIUAAADOAAAAb8AAAL8AAADWgAAA2EAAAGTAAADmQAAAdEA
-AALtAAAB/gAAAwAAAAG8AAAC4AAAA1UAAAOpAAABnAAAA0YAAAHNAAAC+AAAAg8AAAMRAAABxgAA
+AALtAAAB/wAAAwAAAAG8AAAC4AAAA1UAAAOpAAABnAAAA0YAAAHNAAAC+AAAAg4AAAMRAAABxgAA
 AuwAAANWAAADnwAAAZQAAAM/AAAB1wAAAssAAAHsAAAC3AAAAbsAAAMaAAADKQAAA5cAAAGTAAAD
 HAAAAeMAAAL7AAACNQAAAxYAAAHBAAAC3wAAAxQAAAN1AAABeAAAA4AAAAHIAAADAAAAAgsAAALe
 AAABtAAAAyYAAAMxAAADjwAAAY0AAANlAAACDAAAArYAAAISAAADKAAAAaUAAAK/AAADHAAAA4kA
 AAGXAAADawAAAcgAAALKAAACAAAAAvsAAAHHAAAC9wAAAzkAAANYAAABhAAAAy0AAAHcAAACzAAA
-Af4AAAK9AAABswAAApkAAAJeAAACJQAAAYkAAAAUc3RjbwAAAAAAAAABAAAAMAAAAGF1ZHRhAAAA
-WW1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAALGlsc3QAAAAkqXRv
-bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
+Af4AAAK9AAABswAAApkAAAJeAAACJQAAAYkAAAAUc3RjbwAAAAAAAAABAAAAMAAAAGJ1ZHRhAAAA
+Wm1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAALWlsc3QAAAAlqXRv
+bwAAAB1kYXRhAAAAAQAAAABMYXZmNjAuMTYuMTAw
 ">
   Your browser does not support the video tag.
 </video></div></div>
 </div>
-</div>
-<div class="section" id="saving-an-animation">
-<h3>Saving an Animation<a class="headerlink" href="#saving-an-animation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="saving-an-animation">
+<h3>Saving an Animation<a class="headerlink" href="#saving-an-animation" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>To save an animation to a file, use the <code class="docutils literal notranslate"><span class="pre">save()</span></code> method of the animation variable, in this case <code class="docutils literal notranslate"><span class="pre">anim.save()</span></code>, as shown below. The arguments are the file name to save the animation to, in this case <code class="docutils literal notranslate"><span class="pre">animate.gif</span></code>, and the writer used to save the file. Here, the animation writer chosen is <a class="reference external" href="https://pillow.readthedocs.io/en/stable/index.html">Pillow</a>, a library for image processing in Python. There are many choices for an animation writer, which are described in detail in the Matplotlib writer documentation. The documentation for the Pillow writer is described on <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.PillowWriter.html">this page</a>; links to other writer documentation pages are on the left side of the Pillow writer documentation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3528,30 +3282,30 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
 <li><p>Matplotlib supports many different plot types, including the less-commonly-used types described in this section.</p></li>
 <li><p>Some of these lesser-used plot types include histograms and pie charts.</p></li>
 <li><p>This section also covered animation of Matplotlib plots.</p></li>
 </ul>
-</div>
-<div class="section" id="whats-next">
-<h2>What’s Next<a class="headerlink" href="#whats-next" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="whats-next">
+<h2>What’s Next<a class="headerlink" href="#whats-next" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>The next section introduces <a class="reference internal" href="annotations-colorbars-layouts.html"><span class="doc std std-doc">more plotting functionality</span></a>, such as annotations, equation rendering, colormaps, and advanced layout.</p>
-</div>
-<div class="section" id="additional-resources">
-<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://lnkd.in/dD5fE8V">Plot Types Cheat Sheet</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html">Matplotlib Documentation: Basic Pie Charts</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/statistics/hist.html">Matplotlib Documentation: Histograms</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3573,43 +3327,343 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="matplotlib-basics.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Matplotlib Basics</p>
-        </div>
+                  </article>
+
+                
+                
+
+                
+                
+                  <footer class="prev-next-footer">
+                    
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matplotlib-basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matplotlib Basics</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="annotations-colorbars-layouts.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="annotations-colorbars-layouts.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Annotations, Colorbars, and Advanced Layouts</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </div>
-          </div>
-        </main>
+                  </footer>
+                
+              </div>
 
-      </div>
+              
+              
+                
+                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pie-charts">Pie Charts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animations">Animations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-initial-state">Step 1: Initial State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-animation-progression-function">Step 2: Animation Progression Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-using-funcanimation">Step 3: Using <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-animation">Saving an Animation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s Next</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+                
+              
+
+
+                
+                <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
-<footer class="footer">
-  <div class="container-fluid m-0 p-0">
   
-    <div class="footer-item">
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.projectpythia.org/v2/gh/ProjectPythia/pythia-foundations/main?urlpath=lab/tree/core/matplotlib/histograms-piecharts-animation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/pythia-foundations" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/pythia-foundations/edit/main/core/matplotlib/histograms-piecharts-animation.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/pythia-foundations/issues/new?title=Issue%20on%20page%20%2Fcore/matplotlib/histograms-piecharts-animation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/core/matplotlib/histograms-piecharts-animation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+            </div>
+
+            <footer class="bd-footer-content">
+              
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By the <a href="https://projectpythia.org/">Project Pythia</a> Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 29 March 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+            </footer>
+
+        </main>
+    </div>
+  </div>
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+     
+  
+  
+  
+  
+    <div class="footer-items__start">
+      <div class="container-fluid m-0 p-0">
+      
+        <div class="footer-item">
   <div class="container-fluid footer-logos">
     <div class="container-xl">
       <div class="row d-flex flex-wrap align-items-center">
         <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
-          <img alt="NCAR" src="../../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
+          <img alt="NCAR" src="../../_images/NSF-NCAR_Lockup-UCAR-Dark_102523.svg" style="width: 100%">
         </div>
         <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
           <img alt="Unidata" src="../../_images/Unidata_logo_horizontal_1200x300.svg" style="width: 100%">
@@ -3619,11 +3673,10 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
         </div>
       </div>
     </div>
-  </div>
-    </div>
-  
-    <div class="footer-item">
-    <div class="container-fluid footer-menu pt-4">
+  </div></div>
+      
+        <div class="footer-item">
+<div class="container-fluid footer-menu pt-4">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-9 col-sm-4 col-md-4 col-lg-3 footer-menu-col">
@@ -3645,6 +3698,11 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
               >The Project Team</a
             >
           </li>
+          <li>
+            <a href="https://projectpythia.org/#how-to-cite"
+              >How to Cite</a
+            >
+          </li>
         </ul>
       </div>
       <div class="col-9 col-sm-4 col-md-4 col-lg-3 footer-menu-col">
@@ -3654,15 +3712,8 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
             <a href="mailto:projectpythia@ucar.edu">Email us!</a>
           </li>
           <li>
-            <a
-              href="https://github.com/ProjectPythia/projectpythia.github.io/discussions"
-              >Project Pythia Discussions</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/ProjectPythia/pythia-foundations/discussions"
-              >Pythia Foundations Discussions</a
+            <a href="https://discourse.pangeo.io/c/education/project-pythia/60s"
+              >Pangeo Discourse</a
             >
           </li>
         </ul>
@@ -3673,12 +3724,6 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
           <li>
             <a href="https://projectpythia.org/contributing.html"
               >How to contribute to Project Pythia</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://foundations.projectpythia.org/appendix/how-to-contribute.html"
-              >How to contribute to Pythia Foundations</a
             >
           </li>
           <li>
@@ -3700,27 +3745,23 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
       </div>
     </div>
   </div>
-</div>
-    </div>
-  
-    <div class="footer-item">
-      <div class="container-fluid footer-info">
+</div></div>
+      
+        <div class="footer-item">  <div class="container-fluid footer-info">
     <div class="container-xl">
       <div class="d-flex justify-content-center">
         <p class="py-1 m-0">
-            &copy;&nbsp;2022.
+            &copy;&nbsp;2024.
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 23 June 2023.
+          Last updated on 29 March 2024.
         </p>
       </div>
     </div>
-  </div>
-    </div>
-  
-    <div class="footer-item">
-    <div class="container-fluid footer-extra">
+  </div></div>
+      
+        <div class="footer-item"><div class="container-fluid footer-extra">
   <div class="container">
     <center>
       Theme by <a href="https://projectpythia.org">Project Pythia</a>. All code
@@ -3745,10 +3786,12 @@ bwAAABxkYXRhAAAAAQAAAABMYXZmNjAuMy4xMDA=
       </p>
     </div>
   </div>
-</div>
+</div></div>
+      
+      </div>
     </div>
   
-  </div>
-</footer>
+
+  </footer>
   </body>
 </html>
