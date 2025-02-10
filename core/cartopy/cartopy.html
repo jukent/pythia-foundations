@@ -16,31 +16,34 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6f14dede" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -79,7 +82,8 @@
     <link rel="prev" title="Cartopy" href="../cartopy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="11 July 2024"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="10 February 2025"/>
   </head>
   
   
@@ -118,7 +122,7 @@
     
     
     <img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="Pythia Foundations - Home"/>
-    <script>document.write(`<img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="Pythia Foundations - Home"/>`);</script>
+    <img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="Pythia Foundations - Home"/>
   
   
 </a></div>
@@ -359,7 +363,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -470,9 +473,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -533,11 +541,11 @@
 <p>Here, we import the main libraries of Cartopy: crs and feature.  In addition, we import numpy, as well as matplotlib’s pyplot interface. Finally, we import a library called warnings, and use it to remove extraneous warnings that Cartopy produces in later examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">cartopy</span> <span class="kn">import</span> <span class="n">crs</span> <span class="k">as</span> <span class="n">ccrs</span><span class="p">,</span> <span class="n">feature</span> <span class="k">as</span> <span class="n">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">crs</span> <span class="k">as</span> <span class="n">ccrs</span><span class="p">,</span> <span class="n">feature</span> <span class="k">as</span> <span class="n">cfeature</span>
 
 <span class="c1">#  Suppress warnings issued by Cartopy when downloading data files</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
@@ -566,7 +574,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24dc3966f47ef85bebe7e7359974d777d1bf3e31d547da10ccd58b7c80ab44ac.png" src="../../_images/24dc3966f47ef85bebe7e7359974d777d1bf3e31d547da10ccd58b7c80ab44ac.png" />
+<img alt="../../_images/b8eb55f89d1747e4b92d797b5b2bc98d77b6d9b6307db294e959e66482a23662.png" src="../../_images/b8eb55f89d1747e4b92d797b5b2bc98d77b6d9b6307db294e959e66482a23662.png" />
 </div>
 </div>
 <p>Although the figure seems empty, it has, in fact, been georeferenced using a map projection; this projection is provided by Cartopy’s <code class="docutils literal notranslate"><span class="pre">crs</span></code> (coordinate reference system) class. We can now add in cartographic features, in the form of <em>shapefiles</em>, to our subplot. One such cartographic feature is coastlines, which can be added to our subplot using the callable <code class="docutils literal notranslate"><span class="pre">GeoAxes</span></code> method simply called <code class="docutils literal notranslate"><span class="pre">coastlines</span></code>.</p>
@@ -577,7 +585,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f190409ef30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcd54491450&gt;
 </pre></div>
 </div>
 </div>
@@ -593,7 +601,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3040ad4fcb72563880a01bb087d5ea17057bf16328e38c8df69012227e707920.png" src="../../_images/3040ad4fcb72563880a01bb087d5ea17057bf16328e38c8df69012227e707920.png" />
+<img alt="../../_images/a79b68e55e0d25fbbc4a90a25e7886c673d3eb33b78db5921ae642557059df67.png" src="../../_images/a79b68e55e0d25fbbc4a90a25e7886c673d3eb33b78db5921ae642557059df67.png" />
 </div>
 </div>
 </section>
@@ -609,7 +617,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f19040c19a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcd4bf6ddd0&gt;
 </pre></div>
 </div>
 </div>
@@ -622,7 +630,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6cc41549613f86dcadb9091b98f391e37cb164e9a05b1d9759e87a3b2a542479.png" src="../../_images/6cc41549613f86dcadb9091b98f391e37cb164e9a05b1d9759e87a3b2a542479.png" />
+<img alt="../../_images/37df5b8c9cc34baacbc21d043e2aa989f19502b89e14bdbafd680e2bf3fa6466.png" src="../../_images/37df5b8c9cc34baacbc21d043e2aa989f19502b89e14bdbafd680e2bf3fa6466.png" />
 </div>
 </div>
 </section>
@@ -649,7 +657,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Mollweide Projection&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/5afb067029b718008bfe457be01e91572ecc929b0579a50681a09519fe5c2519.png" src="../../_images/5afb067029b718008bfe457be01e91572ecc929b0579a50681a09519fe5c2519.png" />
+<img alt="../../_images/93face383f546fb0e9fe334441a36f109e613e0329622fe3164bdbcc3d876374.png" src="../../_images/93face383f546fb0e9fe334441a36f109e613e0329622fe3164bdbcc3d876374.png" />
 </div>
 </div>
 <section id="add-in-the-cartographic-shapefiles">
@@ -664,7 +672,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0228bc969ae153310fe0680b3a922c52c634150a3b3ef406689f66a230dd131b.png" src="../../_images/0228bc969ae153310fe0680b3a922c52c634150a3b3ef406689f66a230dd131b.png" />
+<img alt="../../_images/520fe5e0325c6aa20a9e809e0929f0ba704d669896a1df3033202ac078c2179f.png" src="../../_images/520fe5e0325c6aa20a9e809e0929f0ba704d669896a1df3033202ac078c2179f.png" />
 </div>
 </div>
 </section>
@@ -679,7 +687,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2a3e0cd9dd15a5e1a924065f46f064747252135981f60d1c7d8b62f68f7e6356.png" src="../../_images/2a3e0cd9dd15a5e1a924065f46f064747252135981f60d1c7d8b62f68f7e6356.png" />
+<img alt="../../_images/ee996102c9edb961f577a8a0eccae12e51204f3f0e5b5d7973d0c4b35b54441a.png" src="../../_images/ee996102c9edb961f577a8a0eccae12e51204f3f0e5b5d7973d0c4b35b54441a.png" />
 </div>
 </div>
 </section>
@@ -699,7 +707,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/197747d56a97c5fe9c2c3c448a432acd14964b50fe63c42a6b764c3b99ae6691.png" src="../../_images/197747d56a97c5fe9c2c3c448a432acd14964b50fe63c42a6b764c3b99ae6691.png" />
+<img alt="../../_images/90401d06a9f33e451616e3164a62b52e8314c7fa9fe8f99ec618fd2a4d383a34.png" src="../../_images/90401d06a9f33e451616e3164a62b52e8314c7fa9fe8f99ec618fd2a4d383a34.png" />
 </div>
 </div>
 </section>
@@ -740,7 +748,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6d631283abf85a7bd7843df0c378441b0ef6f5248d1c903b9d21c04bf71c14b9.png" src="../../_images/6d631283abf85a7bd7843df0c378441b0ef6f5248d1c903b9d21c04bf71c14b9.png" />
+<img alt="../../_images/19ac1b18629c0929bd6c0a3a32960029a25bb2ecf3eab7ace01c5ff05d575afa.png" src="../../_images/19ac1b18629c0929bd6c0a3a32960029a25bb2ecf3eab7ace01c5ff05d575afa.png" />
 </div>
 </div>
 <div class="admonition alert alert-info">
@@ -765,7 +773,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f531f668484cb78218a705b5eb6de46d2cb0562d74915230b6a570947a22f8b5.png" src="../../_images/f531f668484cb78218a705b5eb6de46d2cb0562d74915230b6a570947a22f8b5.png" />
+<img alt="../../_images/260c04fe82c3705d0430b1aa1e950c9fe5a48d3e93c52a91c45cabdb6c9b8b2b.png" src="../../_images/260c04fe82c3705d0430b1aa1e950c9fe5a48d3e93c52a91c45cabdb6c9b8b2b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -786,7 +794,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/500dcf469a04d61c5a89d7fed34078b4a8a87f2d907fc6340f44795841c46bff.png" src="../../_images/500dcf469a04d61c5a89d7fed34078b4a8a87f2d907fc6340f44795841c46bff.png" />
+<img alt="../../_images/893e2e2f52d97b240854bae115a2d9779ce50dac523281564379841152932829.png" src="../../_images/893e2e2f52d97b240854bae115a2d9779ce50dac523281564379841152932829.png" />
 </div>
 </div>
 <div class="admonition alert alert-info">
@@ -835,7 +843,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d25da8cda6a138986a4e0e3d8465bda571e722c26879fef08f25ef0f889a57d3.png" src="../../_images/d25da8cda6a138986a4e0e3d8465bda571e722c26879fef08f25ef0f889a57d3.png" />
+<img alt="../../_images/35e9ae9249e7e35b27f044464fbde4dbbaf44b8469d160d691ab96b6ca9ac5ff.png" src="../../_images/35e9ae9249e7e35b27f044464fbde4dbbaf44b8469d160d691ab96b6ca9ac5ff.png" />
 </div>
 </div>
 <div class="admonition alert alert-info">
@@ -896,7 +904,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c57d37df0c50a8f1c01c18940620605ce3ebecaec95f2cd13ec1a09235b0f188.png" src="../../_images/c57d37df0c50a8f1c01c18940620605ce3ebecaec95f2cd13ec1a09235b0f188.png" />
+<img alt="../../_images/408be15180d3979c99c2a862d00c1e2a897fd05b03fc871a7bcee99af16a8312.png" src="../../_images/408be15180d3979c99c2a862d00c1e2a897fd05b03fc871a7bcee99af16a8312.png" />
 </div>
 </div>
 </section>
@@ -945,7 +953,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/561452c447c68dabbfe1576f33ce59f5a9697424dd0deffab4c07e43868f8f86.png" src="../../_images/561452c447c68dabbfe1576f33ce59f5a9697424dd0deffab4c07e43868f8f86.png" />
+<img alt="../../_images/29623a26189a2765461f9e7134625a63a51349a504e68e32ccf6c95ecec1dad7.png" src="../../_images/29623a26189a2765461f9e7134625a63a51349a504e68e32ccf6c95ecec1dad7.png" />
 </div>
 </div>
 </section>
@@ -963,7 +971,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4c9bb1f86453f3b084e036de668827f066294c388c54b4f8d52abfb0ca0466fa.png" src="../../_images/4c9bb1f86453f3b084e036de668827f066294c388c54b4f8d52abfb0ca0466fa.png" />
+<img alt="../../_images/2b81b1ebf9a46614fd83aaea9391adb91be774b6e1c422bc2682f8fd84f112e6.png" src="../../_images/2b81b1ebf9a46614fd83aaea9391adb91be774b6e1c422bc2682f8fd84f112e6.png" />
 </div>
 </div>
 <p>Plotting data on a Cartesian grid is equivalent to plotting data in the PlateCarree projection, where meridians and parallels are all straight lines with constant spacing. As a result of this simplicity, the global datasets we use often begin in the PlateCarree projection.</p>
@@ -979,7 +987,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/31fca1d7dad1c227096e2c74ed10c87ee233933b3ce27174431b645f596dc1f6.png" src="../../_images/31fca1d7dad1c227096e2c74ed10c87ee233933b3ce27174431b645f596dc1f6.png" />
+<img alt="../../_images/0ce95af039d6b22c1c6bce266ba9595a87da3ab5e9765d6074cccea6173da36f.png" src="../../_images/0ce95af039d6b22c1c6bce266ba9595a87da3ab5e9765d6074cccea6173da36f.png" />
 </div>
 </div>
 </section>
@@ -1291,24 +1299,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -1346,7 +1346,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 11 July 2024.
+  Last updated on 10 February 2025.
   <br/>
 </p>
   </div>
@@ -1363,8 +1363,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
      
@@ -1475,7 +1475,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 11 July 2024.
+          Last updated on 10 February 2025.
         </p>
       </div>
     </div>

@@ -16,31 +16,34 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6f14dede" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -81,7 +84,8 @@
     <link rel="prev" title="Histograms, Pie Charts, and Animations" href="histograms-piecharts-animation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="11 July 2024"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="10 February 2025"/>
   </head>
   
   
@@ -120,7 +124,7 @@
     
     
     <img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="Pythia Foundations - Home"/>
-    <script>document.write(`<img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="Pythia Foundations - Home"/>`);</script>
+    <img src="../../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="Pythia Foundations - Home"/>
   
   
 </a></div>
@@ -361,7 +365,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -472,9 +475,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -537,10 +545,10 @@
 <p>Here, we import the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface and <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, in addition to the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> statistics package (<code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>) for generating sample data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span><span class="p">,</span> <span class="n">ListedColormap</span><span class="p">,</span> <span class="n">Normalize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSegmentedColormap</span><span class="p">,</span> <span class="n">ListedColormap</span><span class="p">,</span> <span class="n">Normalize</span>
 </pre></div>
 </div>
 </div>
@@ -563,7 +571,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7031bdfc84b706a373e87b7af036a7ee9b98089923cd25a3a34c13afd114fcf3.png" src="../../_images/7031bdfc84b706a373e87b7af036a7ee9b98089923cd25a3a34c13afd114fcf3.png" />
+<img alt="../../_images/fe9b1df2585a267469fded37b1be1e4893539e01425a83b13efd161e6d192fb9.png" src="../../_images/fe9b1df2585a267469fded37b1be1e4893539e01425a83b13efd161e6d192fb9.png" />
 </div>
 </div>
 </section>
@@ -579,7 +587,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4a7bec1919be4700905e1a9dc56306a8ee4494a35e0f2ce938e9c0bfa32608d1.png" src="../../_images/4a7bec1919be4700905e1a9dc56306a8ee4494a35e0f2ce938e9c0bfa32608d1.png" />
+<img alt="../../_images/bca4bdd83f7053142c2f07375d863d8241eb4190ddc466bbd16603acae367864.png" src="../../_images/bca4bdd83f7053142c2f07375d863d8241eb4190ddc466bbd16603acae367864.png" />
 </div>
 </div>
 </section>
@@ -608,7 +616,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b47f54165425dd12fe8f3073512a1fdaf5a51472412cb3acde632778718c7ff9.png" src="../../_images/b47f54165425dd12fe8f3073512a1fdaf5a51472412cb3acde632778718c7ff9.png" />
+<img alt="../../_images/a6c292daad9ed5a528478b1f570fa44c0195abbf71381d8a0290ff194f22156b.png" src="../../_images/a6c292daad9ed5a528478b1f570fa44c0195abbf71381d8a0290ff194f22156b.png" />
 </div>
 </div>
 <p>As you can see, the equation was correctly rendered in the plot above. However, the equation appears quite small.  We can increase the size of the text using the <code class="docutils literal notranslate"><span class="pre">fontsize</span></code> keyword argument, and center the equation using the <code class="docutils literal notranslate"><span class="pre">ha</span></code> (horizontal alignment) keyword argument.</p>
@@ -624,7 +632,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8a3f25e6664932b85cbca04922578b5896daafc2615f04e19ef1297282ffb256.png" src="../../_images/8a3f25e6664932b85cbca04922578b5896daafc2615f04e19ef1297282ffb256.png" />
+<img alt="../../_images/a32ad683f944aaea9904af21e7e2d3bbb6d0d08499e03abb67edc8fc238009f7.png" src="../../_images/a32ad683f944aaea9904af21e7e2d3bbb6d0d08499e03abb67edc8fc238009f7.png" />
 </div>
 </div>
 <section id="add-a-box-around-the-text">
@@ -660,7 +668,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8a6cfdf8036122e23e01654224bae94594e2dadf2ca229b81f521e812ca087f6.png" src="../../_images/8a6cfdf8036122e23e01654224bae94594e2dadf2ca229b81f521e812ca087f6.png" />
+<img alt="../../_images/c3d12727387b523c276b6df34d632700c244e66e45186ef37aefd27b8c9ac70f.png" src="../../_images/c3d12727387b523c276b6df34d632700c244e66e45186ef37aefd27b8c9ac70f.png" />
 </div>
 </div>
 </section>
@@ -736,7 +744,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/95ff0eda6ecd750f03c1f967498fd0d79d02b142d4fb4f9157b414d9af72c115.png" src="../../_images/95ff0eda6ecd750f03c1f967498fd0d79d02b142d4fb4f9157b414d9af72c115.png" />
+<img alt="../../_images/bfce7bdc75720fd746c1818b1f64fdcef743f2f28809169ddff5499c7779a967.png" src="../../_images/bfce7bdc75720fd746c1818b1f64fdcef743f2f28809169ddff5499c7779a967.png" />
 </div>
 </div>
 <p>We can change which colormap to use by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">cmap</span> <span class="pre">=</span> <span class="pre">'colormap_name'</span></code> in the plotting function call.  This sets the colormap not only for the plot, but for the colorbar as well.  In this case, we use the <code class="docutils literal notranslate"><span class="pre">magma</span></code> colormap:</p>
@@ -751,7 +759,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/55893d347d428236ddee063932ee7f1cbf27d1f4deaec881b862f46849c5be66.png" src="../../_images/55893d347d428236ddee063932ee7f1cbf27d1f4deaec881b862f46849c5be66.png" />
+<img alt="../../_images/26a7cd0c7ae592e93be413dd4ac7638303f5d40a95f74725f75d105ac8b5077c.png" src="../../_images/26a7cd0c7ae592e93be413dd4ac7638303f5d40a95f74725f75d105ac8b5077c.png" />
 </div>
 </div>
 </section>
@@ -770,10 +778,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f465c9bf740&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f6cc858a0d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/cab587f7a1cf371abf0cb91b267c0ca376b2781043786fe34dabe0dd4066c8e1.png" src="../../_images/cab587f7a1cf371abf0cb91b267c0ca376b2781043786fe34dabe0dd4066c8e1.png" />
+<img alt="../../_images/8e5d94472224de4d1109e5cf9183f2ccad266c0d50471b20ab3d12a0c4904dc3.png" src="../../_images/8e5d94472224de4d1109e5cf9183f2ccad266c0d50471b20ab3d12a0c4904dc3.png" />
 </div>
 </div>
 <p>You may be wondering why the call to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code> uses the argument <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code>. The explanation is as follows: <code class="docutils literal notranslate"><span class="pre">hist1</span></code> is a tuple returned by <code class="docutils literal notranslate"><span class="pre">hist2d</span></code>, and <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> contains a <code class="docutils literal notranslate"><span class="pre">matplotlib.collections.QuadMesh</span></code> that points to the colormap for the first histogram. To make sure that both histograms are using the same colormap with the same range of values, <code class="docutils literal notranslate"><span class="pre">vmax</span></code> is set to 0.18 for both plots. This ensures that both histograms are using colormaps that represent values from 0 (the default for histograms) to 0.18. Because the same data values are used for both plots, it doesn’t matter whether we pass in <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> or <code class="docutils literal notranslate"><span class="pre">hist2[3]</span></code> to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code>.
@@ -800,7 +808,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Shared colormaps on data with different ranges&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/821e7b69940167b46df5374c1255eafa2b7c1713bde9f85c54038a09f610338f.png" src="../../_images/821e7b69940167b46df5374c1255eafa2b7c1713bde9f85c54038a09f610338f.png" />
+<img alt="../../_images/473bd4ffad390cf92bf1c0beb54729dee8d329a507f098b3df75353c4d2fd5d6.png" src="../../_images/473bd4ffad390cf92bf1c0beb54729dee8d329a507f098b3df75353c4d2fd5d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -818,7 +826,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Using the contourf output from the data with a wider range&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/98c45d6ec18fb58dbcb91aa418431591ccdc5366e3ceaf7699b75895fa3f3f8d.png" src="../../_images/98c45d6ec18fb58dbcb91aa418431591ccdc5366e3ceaf7699b75895fa3f3f8d.png" />
+<img alt="../../_images/19c4f2dcfcb0e341c4a4110457a5dc1bd91902d9d5473da7773dc859604c905f.png" src="../../_images/19c4f2dcfcb0e341c4a4110457a5dc1bd91902d9d5473da7773dc859604c905f.png" />
 </div>
 </div>
 </section>
@@ -854,7 +862,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0df3aafc9e00e9cdef54e7b26e2087bd9fe327964546539e7290c27fe6777da.png" src="../../_images/c0df3aafc9e00e9cdef54e7b26e2087bd9fe327964546539e7290c27fe6777da.png" />
+<img alt="../../_images/b4d006aa750e229bb649c30e1ade7abbd8c3f86c2c33cc2e18f152435b7df511.png" src="../../_images/b4d006aa750e229bb649c30e1ade7abbd8c3f86c2c33cc2e18f152435b7df511.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -871,7 +879,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/835f5a7abcf9cd951773f8d8ff290073014d2e7126c70916d46c0009735b0173.png" src="../../_images/835f5a7abcf9cd951773f8d8ff290073014d2e7126c70916d46c0009735b0173.png" />
+<img alt="../../_images/b26a07ce9cc37341ca4a3e89d54b9bb95eb4d55072c79714f824dcda5e398b99.png" src="../../_images/b26a07ce9cc37341ca4a3e89d54b9bb95eb4d55072c79714f824dcda5e398b99.png" />
 </div>
 </div>
 <section id="the-normalize-class">
@@ -908,7 +916,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9c18f559d5cab589672de59999e3d95985f8ff2169f544c0f88a5f226de21e1d.png" src="../../_images/9c18f559d5cab589672de59999e3d95985f8ff2169f544c0f88a5f226de21e1d.png" />
+<img alt="../../_images/6be3d43bba3a621f08fe9cf129c67159640ae02d5d326b94a9194bcff9be0e20.png" src="../../_images/6be3d43bba3a621f08fe9cf129c67159640ae02d5d326b94a9194bcff9be0e20.png" />
 </div>
 </div>
 <p>You’ll notice there is not a colorbar plotted by default. When constructing the colorbar, we need to specify the following:</p>
@@ -936,13 +944,13 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2608/1337655102.py:12: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 4 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2700/1337655102.py:12: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 4 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
   fig.colorbar(histA[3], ax=[axdict[&#39;A&#39;], axdict[&#39;B&#39;]], location=&#39;bottom&#39;)
-/tmp/ipykernel_2608/1337655102.py:13: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 5 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
+/tmp/ipykernel_2700/1337655102.py:13: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 5 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
   fig.colorbar(histC[3], ax=[axdict[&#39;C&#39;]], location=&#39;right&#39;);
 </pre></div>
 </div>
-<img alt="../../_images/832cbb86820324d4113e724ffd59d3b3e5e91c9c99e32caff939e39744537c55.png" src="../../_images/832cbb86820324d4113e724ffd59d3b3e5e91c9c99e32caff939e39744537c55.png" />
+<img alt="../../_images/cf9b94c330b8926ba713b3fc246546a7eab80c83125a5eef2f2c2415560fb477.png" src="../../_images/cf9b94c330b8926ba713b3fc246546a7eab80c83125a5eef2f2c2415560fb477.png" />
 </div>
 </div>
 </section>
@@ -1248,24 +1256,16 @@ You can learn more about this topic by reviewing the <a class="reference externa
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -1303,7 +1303,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 11 July 2024.
+  Last updated on 10 February 2025.
   <br/>
 </p>
   </div>
@@ -1320,8 +1320,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
      
@@ -1432,7 +1432,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 11 July 2024.
+          Last updated on 10 February 2025.
         </p>
       </div>
     </div>
