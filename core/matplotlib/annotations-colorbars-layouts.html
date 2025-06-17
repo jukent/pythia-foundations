@@ -81,7 +81,7 @@
     <link rel="prev" title="Histograms, Pie Charts, and Animations" href="histograms-piecharts-animation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="10 June 2025"/>
+    <meta name="docbuild:last-update" content="17 June 2025"/>
   </head>
   
   
@@ -736,7 +736,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0ea0e5983d4a22b5b8d4df915423ce45fcd601ced2fd9cd283dac8fa962f8dcb.png" src="../../_images/0ea0e5983d4a22b5b8d4df915423ce45fcd601ced2fd9cd283dac8fa962f8dcb.png" />
+<img alt="../../_images/88385f6648a65a125e0e186c8422057ad501df0b0388721e20362d2bd5a334d1.png" src="../../_images/88385f6648a65a125e0e186c8422057ad501df0b0388721e20362d2bd5a334d1.png" />
 </div>
 </div>
 <p>We can change which colormap to use by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">cmap</span> <span class="pre">=</span> <span class="pre">'colormap_name'</span></code> in the plotting function call.  This sets the colormap not only for the plot, but for the colorbar as well.  In this case, we use the <code class="docutils literal notranslate"><span class="pre">magma</span></code> colormap:</p>
@@ -751,7 +751,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8ac2e00e129ba4d4386dc2d08a44f18a771239a296101a03413d3fc5f9c564c9.png" src="../../_images/8ac2e00e129ba4d4386dc2d08a44f18a771239a296101a03413d3fc5f9c564c9.png" />
+<img alt="../../_images/310a6936a6f1985d35406a513836e39fb11f89655b12ed931983309cf0f07ae1.png" src="../../_images/310a6936a6f1985d35406a513836e39fb11f89655b12ed931983309cf0f07ae1.png" />
 </div>
 </div>
 </section>
@@ -770,10 +770,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd16a5b9490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2568c03d90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/fbf95fc5b6ea0f7b2b3e55430878a4252d591750f6b8d34eb4482cb2e27ba709.png" src="../../_images/fbf95fc5b6ea0f7b2b3e55430878a4252d591750f6b8d34eb4482cb2e27ba709.png" />
+<img alt="../../_images/d311e4fc54ff26739fa71577ce96bc06da6cab9fe82629e0aba70f628d783ae5.png" src="../../_images/d311e4fc54ff26739fa71577ce96bc06da6cab9fe82629e0aba70f628d783ae5.png" />
 </div>
 </div>
 <p>You may be wondering why the call to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code> uses the argument <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code>. The explanation is as follows: <code class="docutils literal notranslate"><span class="pre">hist1</span></code> is a tuple returned by <code class="docutils literal notranslate"><span class="pre">hist2d</span></code>, and <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> contains a <code class="docutils literal notranslate"><span class="pre">matplotlib.collections.QuadMesh</span></code> that points to the colormap for the first histogram. To make sure that both histograms are using the same colormap with the same range of values, <code class="docutils literal notranslate"><span class="pre">vmax</span></code> is set to 0.18 for both plots. This ensures that both histograms are using colormaps that represent values from 0 (the default for histograms) to 0.18. Because the same data values are used for both plots, it doesn’t matter whether we pass in <code class="docutils literal notranslate"><span class="pre">hist1[3]</span></code> or <code class="docutils literal notranslate"><span class="pre">hist2[3]</span></code> to <code class="docutils literal notranslate"><span class="pre">fig.colorbar</span></code>.
@@ -854,7 +854,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba5b1ef2e8d65f4f9b286503af79e36c7867bdef7bcffae8f5587e4d093b17a4.png" src="../../_images/ba5b1ef2e8d65f4f9b286503af79e36c7867bdef7bcffae8f5587e4d093b17a4.png" />
+<img alt="../../_images/75332ff2f3a51e017302dd86fb1ed1f875937381fb7e84535bdd352385cefd6a.png" src="../../_images/75332ff2f3a51e017302dd86fb1ed1f875937381fb7e84535bdd352385cefd6a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -871,7 +871,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3cfce4f6a2d3d2a8a1ee29d59b6bfcd5cc5782659e8571c1a1ab079b1e4c8ee3.png" src="../../_images/3cfce4f6a2d3d2a8a1ee29d59b6bfcd5cc5782659e8571c1a1ab079b1e4c8ee3.png" />
+<img alt="../../_images/c2e4c9ae624185968cbc64b71707a220844fde33a3ea8580926e764fb597e9d4.png" src="../../_images/c2e4c9ae624185968cbc64b71707a220844fde33a3ea8580926e764fb597e9d4.png" />
 </div>
 </div>
 <section id="the-normalize-class">
@@ -908,7 +908,7 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1c901b650040b52b22f94bf7bcd43a72f20445c507c211c253001fcfd2ee4d43.png" src="../../_images/1c901b650040b52b22f94bf7bcd43a72f20445c507c211c253001fcfd2ee4d43.png" />
+<img alt="../../_images/8f8030755f37764430c2dc14f03d8912f08b874d8a3151dc42b4547e7d96e028.png" src="../../_images/8f8030755f37764430c2dc14f03d8912f08b874d8a3151dc42b4547e7d96e028.png" />
 </div>
 </div>
 <p>You’ll notice there is not a colorbar plotted by default. When constructing the colorbar, we need to specify the following:</p>
@@ -936,13 +936,13 @@ You can learn more about this topic by reviewing the <a class="reference externa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2926/1337655102.py:12: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 4 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4128/1337655102.py:12: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 4 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
   fig.colorbar(histA[3], ax=[axdict[&#39;A&#39;], axdict[&#39;B&#39;]], location=&#39;bottom&#39;)
-/tmp/ipykernel_2926/1337655102.py:13: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 5 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
+/tmp/ipykernel_4128/1337655102.py:13: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 5 Axes&gt; than &lt;Figure size 640x480 with 3 Axes&gt; which fig.colorbar is called on.
   fig.colorbar(histC[3], ax=[axdict[&#39;C&#39;]], location=&#39;right&#39;);
 </pre></div>
 </div>
-<img alt="../../_images/6fffddd199915fd7d7789e5b1765fe319cbc618c34ff596b9251b7274caf0515.png" src="../../_images/6fffddd199915fd7d7789e5b1765fe319cbc618c34ff596b9251b7274caf0515.png" />
+<img alt="../../_images/ba08f45332c8584dbc01a9db2b26052732e0653034400c2eb3fe0336171cf078.png" src="../../_images/ba08f45332c8584dbc01a9db2b26052732e0653034400c2eb3fe0336171cf078.png" />
 </div>
 </div>
 </section>
@@ -1303,7 +1303,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 10 June 2025.
+  Last updated on 17 June 2025.
   <br/>
 </p>
   </div>
@@ -1432,7 +1432,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 10 June 2025.
+          Last updated on 17 June 2025.
         </p>
       </div>
     </div>
