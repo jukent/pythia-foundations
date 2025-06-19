@@ -10,7 +10,11 @@ jobs:
     if: ${{ github.repository_owner == 'ProjectPythia' }}
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
     with:
-      environment_name: pythia-book-dev
+      base_url: ''
+
+  deploy:
+    needs: build
+    uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@main
 
   link-check:
     if: ${{ github.repository_owner == 'ProjectPythia' }}
