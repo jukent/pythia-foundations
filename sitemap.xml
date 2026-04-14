@@ -74,7 +74,7 @@
     <loc>http://localhost:3000/foundations/github/review-pr</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/foundations/github/github-workflows</loc>
+    <loc>http://localhost:3000/foundations/github/git-workflows</loc>
   </url>
   <url>
     <loc>http://localhost:3000/foundations/github/contribute-to-pythia</loc>
